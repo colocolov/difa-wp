@@ -1,4 +1,6 @@
-<?php get_header( ); ?>
+<?php get_header( ); 
+
+?>
 
 <div class="main-slider">
   <div class="swiper-wrapper">
@@ -50,30 +52,33 @@
   </div>
   <aside class="slider-aside">
     <div class="slider-aside__content">
-      <p class="slider-aside__text"><span>design & archtecture solution</span></p>
+      <p class="slider-aside__text"><span><?php echo $difa_options['social-profiles-text'];; ?></span></p>
       <div class="slider-aside__divider"></div>
       <ul data-da=".menu__body,768,2" class="socail slider-aside__list">
+        <?php
+          $social_links = $difa_options['social-profiles-links'];
+            foreach($social_links as $social=>$link){ 
+              $svg = '';
+              if ($social == 'Viber'){
+                $svg = 'viber';
+              } else if ($social == 'Instagram'){
+                $svg = 'instagram';
+              } else if ($social == 'Facebook'){
+                $svg = 'facebook';
+              }
+        ?>
+
         <li class="social__item slider-aside__item">
-          <a href="#" class="social__link">
+          <a class="social__link" href="<?php echo $link; ?>" target="_blank">
             <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#viber"></use>
+              <use
+                xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#<?php echo $svg; ?>">
+              </use>
             </svg>
           </a>
         </li>
-        <li class="social__item slider-aside__item">
-          <a href="#" class="social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item slider-aside__item">
-          <a href="#" class="social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#facebook"></use>
-            </svg>
-          </a>
-        </li>
+
+        <?php } ?>
       </ul>
     </div>
   </aside>
@@ -180,67 +185,5 @@
   </div>
 
 </main>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__content">
-      <h2 class="heading footer__head">Contacte</h2>
-      <ul class="socail footer__list">
-        <li class="social__item footer__item">
-          <a href="#" class="footer__link social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item footer__item">
-          <a href="#" class="social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item footer__item">
-          <a href="#" class="social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#viber"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-      <div class="footer__data">
-        <div class="footer__contact">
-          <div class="footer__phone">
-            Telefon:
-            <a href="tel:+37369899544" class="footer__link">+373 69 899 544</a>
-          </div>
-          <div class="footer__phone">
-            Telefon:
-            <a href="tel:+37322000807" class="footer__link">+373 22 000 807</a>
-          </div>
-          <div class="footer__email">
-            <a href="mailto:difa4solutions@gmail.com" class="footer__link">difa4solutions@gmail.com</a>
-          </div>
-        </div>
-        <address class="footer__adress">
-          str. Grenoble 128 of. 314,<br />
-          mun. Chișinau, MD2048<br />
-          Republica Moldova
-        </address>
-        <p class="footer__copyright">
-          DIFA. Toate drepturile sunt rezervate. 2021
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
 
-</div>
-
-<!-- подключение скриптов -->
-<!-- <script src="js/adv.min.js"></script> -->
-<script src="js/swiper-bundle.min.js"></script>
-<script src="js/main.js"></script>
-<?php wp_footer(); ?>
-</body>
-
-</html>
+<?php get_footer(); ?>

@@ -328,6 +328,29 @@ Redux::set_section(
 Redux::set_section(
 	$opt_name,
 	array(
+		'title'      => esc_html__( 'Contacts Data', 'difa' ),
+		'id'         => 'contacts',
+		'subsection' => true,
+		'desc'       => esc_html__( 'Add contacts data for yor site', 'difa' ),
+		'fields'     => array(
+			array(
+				'id'       => 'primary_phone',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Your primary phone', 'difa' ),
+				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),
+			),
+			array(
+				'id'       => 'secondary_phone',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Your secondary phone', 'difa' ),
+				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),
+			),
+		),
+	)
+);
+Redux::set_section(
+	$opt_name,
+	array(
 		'title'      => esc_html__( 'Social Profiles', 'difa' ),
 		'id'         => 'social-profiles-sort',
 		'subsection' => true,
@@ -337,22 +360,31 @@ Redux::set_section(
 				'id'       => 'social-profiles-links',
 				'type'     => 'sortable',
 				'title'    => esc_html__( 'Social Links', 'difa' ),
-				'subtitle' => esc_html__( 'Define and reorder these however you want.', 'difa' ),
-				'desc'     => esc_html__( 'This is the description field, again good for additional info.', 'difa' ),
+				'subtitle' => esc_html__( 'Insert Links for your Sicial Profiles', 'difa' ),
+				'desc'     => esc_html__( 'Let the fiels empty if you dont\'t have a link', 'difa' ),
 				'label'    => true,
 				'options'  => array(
-					'Text One'   => 'Item 1',
-					'Text Two'   => 'Item 2',
-					'Text Three' => 'Item 3',
+					'Viber'   => '',
+					'Instagram'   => '',
+					'Facebook' => '',
 				),
+			),
+			array(
+				'id'       => 'social-profiles-text',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Text for Links', 'difa' ),
+				'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
+				// 'desc'     => esc_html__( 'Let the fiels empty if you dont\'t have a link', 'difa' ),
+				'default'  => 'design & archtecture solution',
 			),
 		),
 	)
 );
 
+
 //-----END MY FIELDS
 
-
+/*
 Redux::set_section(
 	$opt_name,
 	array(
@@ -575,6 +607,8 @@ if ( class_exists( 'Redux_Pro' ) ) {
 	require_once Redux_Core::$dir . '../sample/sections/pro-fields/users.php';
 	require_once Redux_Core::$dir . '../sample/sections/pro-fields/widget-areas.php';
 }
+
+*/
 
 /**
  * Metaboxes

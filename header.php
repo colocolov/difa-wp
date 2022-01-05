@@ -20,6 +20,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <?php 
+    global $difa_options;
+  ?>
 
   <div class="wrapper">
 
