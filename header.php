@@ -1,59 +1,80 @@
 <?php
 /**
  * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Difa
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+<head>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+
+  <!-- подключение favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png" />
+
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'difa' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$difa_description = get_bloginfo( 'description', 'display' );
-			if ( $difa_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $difa_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+  <div class="wrapper">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'difa' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <header class="header">
+      <div class="container header__container">
+        <a href="/" class="header__link header__link--logo header__link--logo-index"><img src="images/logo.svg"
+            alt="Logo: Difa" class="logo image" /></a>
+        <a data-da=".menu__body,768,1" href="tel:+37369592042" class="header__link header__link--phone">+373 (69)
+          592042</a>
+        <div class="header__menu menu">
+          <nav class="menu__body">
+
+            <?php wp_nav_menu( [
+								'theme_location'  => 'header',
+								'container'       => false,
+								'menu_class'      => 'menu__list',
+								'menu_id'         => false,
+								'echo'            => true,
+								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								'depth'           => 0,
+							] ); ?>
+            <!--
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="interior.html" class="menu__link">Interior</a>
+              </li>
+              <li class="menu__item">
+                <a href="mobilier.html" class="menu__link">Mobilier</a>
+              </li>
+              <li class="menu__item">
+                <a href="arhitectura.html" class="menu__link">Arhitectura</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Contacte</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Ro</a>
+                <button type="button" class="menu__arrow"></button>
+                <ul class="menu__sub-list">
+                  <li class="menu__sub-item">
+                    <a href="#" class="menu__sub-link">Ro</a>
+                  </li>
+                  <li class="menu__sub-item">
+                    <a href="#" class="menu__sub-link">Ru</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+						-->
+          </nav>
+          <button type="button" class="menu__icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>

@@ -1,10 +1,6 @@
 <?php
 /**
  * Difa functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Difa
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -32,27 +28,11 @@ if ( ! function_exists( 'difa_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
+		// custom title 
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
+		// 
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'difa' ),
-			)
-		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -100,9 +80,33 @@ if ( ! function_exists( 'difa_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'header' => esc_html__( 'Header Menu', 'difa' ),
+			)
+		);
+
+/*
+*
+*
+*/
+
+
 	}
 endif;
 add_action( 'after_setup_theme', 'difa_setup' );
+
+/*
+* Add custom class for nav menu
+*
+*/ 
+add_filter( 'nav_menu_css_class', 'custom_nav_menu_css_class', 10, 1 );
+function custom_nav_menu_css_class ($classess){
+$classess[] = 'menu__item';
+return $classess;
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -155,3 +159,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Include Options Panel by Redux.
+ */
+require get_template_directory() . '/inc/options-panel-redux.php';

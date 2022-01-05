@@ -12,3 +12,6 @@ License URI: LICENSE
 Text Domain: difa
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+.menu__item.current-menu-item a {
+  color: #fbb03b;
+}
