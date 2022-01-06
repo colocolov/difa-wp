@@ -1,5 +1,10 @@
 <!-- HEADER -->
 
+
+<?php if () : else: endif; ?>
+<?php esc_html_e( 'Contacte', 'difa' ); ?>
+
+
 <?php wp_body_open(); ?>
 <div id="page" class="site">
   <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'difa' ); ?></a>

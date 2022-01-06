@@ -28,10 +28,32 @@
 
     <header class="header">
       <div class="container header__container">
-        <a href="/" class="header__link header__link--logo header__link--logo-index"><img src="images/logo.svg"
-            alt="Logo: Difa" class="logo image" /></a>
-        <a data-da=".menu__body,768,1" href="tel:+37369592042" class="header__link header__link--phone">+373 (69)
-          592042</a>
+
+        <!--  -->
+        <?php if ( is_front_page() && is_home() ) :
+				?>
+        <a class="header__link header__link--logo header__link--logo-index">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
+            alt="<?php bloginfo( 'name' ); ?>" class="logo image" />
+        </a>
+        <?php	else : ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__link header__link--logo">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
+            alt="<?php bloginfo( 'name' ); ?>" class="logo image" />
+        </a>
+
+        <?php	endif; ?>
+
+        <!--  -->
+
+        <?php if ($difa_options['primary_phone']) : ?>
+        <a data-da=".menu__body,768,1" href="tel:<?php 
+								$primary = str_replace(" ","",$difa_options['primary_phone']);
+								echo $primary; 
+							?>" class="header__link header__link--phone">
+          <?php echo $difa_options['primary_phone']; ?>
+        </a>
+        <?php endif; ?>
         <div class="header__menu menu">
           <nav class="menu__body">
 

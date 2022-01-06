@@ -8,62 +8,64 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__content">
-      <h2 class="heading footer__head">Contacte</h2>
+      <h2 class="heading footer__head"><?php esc_html_e( 'Contacte', 'difa' ); ?></h2>
       <ul class="socail footer__list">
+        <?php
+          $social_links = $difa_options['social-profiles-links'];
+            foreach($social_links as $social=>$link) : 
+              $svg = '';
+              if ($social == 'Viber') : $svg = 'viber';
+                elseif ($social == 'Instagram') : $svg = 'instagram';
+                elseif ($social == 'Facebook') : $svg = 'facebook';
+              endif;
+              if ($link) :
+        ?>
         <li class="social__item footer__item">
-          <a href="#" class="footer__link social__link">
+          <a class="footer__link social__link" href="<?php echo $link; ?>">
             <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#facebook"></use>
+              <use
+                xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#<?php echo $svg; ?>">
+              </use>
             </svg>
           </a>
         </li>
-        <li class="social__item footer__item">
-          <a href="#" class="social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social__item footer__item">
-          <a href="#" class="social__link">
-            <svg class="social__icon" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#viber"></use>
-            </svg>
-          </a>
-        </li>
+        <?php endif; endforeach; ?>
       </ul>
       <div class="footer__data">
         <div class="footer__contact">
+          <?php 
+            if ($difa_options['secondary_phones']) :
+              foreach ($difa_options['secondary_phones'] as $phone) :
+                if ($phone) :
+          ?>
           <div class="footer__phone">
             Telefon:
-            <a href="tel:<?php 
-								$primary = str_replace(" ","",$difa_options['primary_phone']);
-								echo $primary; 
+            <a href="tel:<?php echo $tel = str_replace(" ","",$phone); 
 							?>" class="footer__link">
-              <?php echo $difa_options['primary_phone']; ?>
+              <?php echo $phone ?>
             </a>
           </div>
-          <div class="footer__phone">
-            Telefon:
-            <a href="tel:<?php 
-								$secondary = str_replace(" ","",$difa_options['secondary_phone']);
-								echo $secondary; 
-							?>" class="footer__link">
-              <?php echo $difa_options['secondary_phone']; ?>
-            </a>
-          </div>
+          <?php endif; endforeach; endif; 
+            if ($difa_options['email_difa']) :
+          ?>
           <div class="footer__email">
-            <a href="mailto:difa4solutions@gmail.com" class="footer__link">difa4solutions@gmail.com</a>
+            <a href="mailto:<?php echo $difa_options['email_difa']; ?>"
+              class="footer__link"><?php echo $difa_options['email_difa']; ?></a>
           </div>
         </div>
+        <?php endif; 
+          if ($difa_options['address']) :
+        ?>
         <address class="footer__adress">
-          str. Grenoble 128 of. 314,<br />
-          mun. Chișinau, MD2048<br />
-          Republica Moldova
+          <?php echo $difa_options['address']; ?>
         </address>
+        <?php endif; 
+          if ($difa_options['copyright']) :
+        ?>
         <p class="footer__copyright">
           DIFA. Toate drepturile sunt rezervate. 2021
         </p>
+        <?php endif; ?>
       </div>
     </div>
   </div>

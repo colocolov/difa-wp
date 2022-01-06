@@ -328,6 +328,22 @@ Redux::set_section(
 Redux::set_section(
 	$opt_name,
 	array(
+		'title'      => esc_html__( 'Theme Settings', 'difa' ),
+		'id'         => 'difa_settings',
+		'subsection' => true,
+		'desc'       => esc_html__( 'Global settings for site', 'difa' ),
+		'fields'     => array(
+			array(
+				'id'       => 'copyright',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Entry copyright', 'difa' ),
+			),
+		),
+	)
+);
+Redux::set_section(
+	$opt_name,
+	array(
 		'title'      => esc_html__( 'Contacts Data', 'difa' ),
 		'id'         => 'contacts',
 		'subsection' => true,
@@ -340,10 +356,23 @@ Redux::set_section(
 				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),
 			),
 			array(
-				'id'       => 'secondary_phone',
+				'id'       => 'secondary_phones',
+				'type'     => 'multi_text',
+				'title'    => esc_html__( 'Your secondary phones', 'difa' ),
+				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),				
+			),
+			array(
+				'id'       => 'email_difa',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Your secondary phone', 'difa' ),
-				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),
+				'title'    => esc_html__( 'Text Option - Email Validated', 'difa' ),				
+				'validate' => 'email',
+				'msg'      => 'An error message you could customize via your option array!',
+				'default'  => '',
+			),
+			array(
+				'id'       => 'address',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Your address', 'difa' ),
 			),
 		),
 	)

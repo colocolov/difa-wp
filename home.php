@@ -4,7 +4,8 @@
 
 <div class="main-slider">
   <div class="swiper-wrapper">
-    <div class="swiper-slide main-slider__slide" style="background-image: url(images/portfolio/slide-1.jpg)">
+    <div class="swiper-slide main-slider__slide"
+      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-1.jpg)">
       <div class="container main-slider__container">
         <h2 class="heading main-slider__head">
           <span>Design</span> solutions <br />for home
@@ -13,7 +14,8 @@
       </div>
     </div>
     <!-- slide -->
-    <div class="swiper-slide main-slider__slide" style="background-image: url(images/portfolio/slide-4.jpg)">
+    <div class="swiper-slide main-slider__slide"
+      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-4.jpg)">
       <div class="container main-slider__container">
         <h2 class="heading main-slider__head">
           <span>Arhitecture</span> solutions<br /> for home
@@ -22,7 +24,8 @@
       </div>
     </div>
     <!-- slide -->
-    <div class="swiper-slide main-slider__slide" style="background-image: url(images/portfolio/slide-5.jpg)">
+    <div class="swiper-slide main-slider__slide"
+      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-5.jpg)">
       <div class="container main-slider__container">
         <h2 class="heading main-slider__head">
           <span>Interior</span> solutions<br /> for home <span>&</span> busines.
@@ -30,7 +33,8 @@
       </div>
     </div>
     <!-- slide -->
-    <div class="swiper-slide main-slider__slide" style="background-image: url(images/portfolio/slide-6.jpg)">
+    <div class="swiper-slide main-slider__slide"
+      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-6.jpg)">
       <div class="container main-slider__container">
         <h2 class="heading main-slider__head">
           <span>Furniture</span> solutions<br /> for home
@@ -42,12 +46,12 @@
   </div>
   <div class="main-slider__btn main-slider__btn-prev">
     <svg class="main-slider__btn-fill" aria-hidden="true">
-      <use xlink:href="images/icons/sprite.svg#arrow-slider"></use>
+      <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
     </svg>
   </div>
   <div class="main-slider__btn main-slider__btn-next">
     <svg class="main-slider__btn-fill" aria-hidden="true">
-      <use xlink:href="images/icons/sprite.svg#arrow-slider"></use>
+      <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
     </svg>
   </div>
   <aside class="slider-aside">
@@ -57,15 +61,13 @@
       <ul data-da=".menu__body,768,2" class="socail slider-aside__list">
         <?php
           $social_links = $difa_options['social-profiles-links'];
-            foreach($social_links as $social=>$link){ 
+            foreach($social_links as $social=>$link) : 
               $svg = '';
-              if ($social == 'Viber'){
-                $svg = 'viber';
-              } else if ($social == 'Instagram'){
-                $svg = 'instagram';
-              } else if ($social == 'Facebook'){
-                $svg = 'facebook';
-              }
+              if ($social == 'Viber') : $svg = 'viber';
+                elseif ($social == 'Instagram') : $svg = 'instagram';
+                elseif ($social == 'Facebook') : $svg = 'facebook';
+              endif;
+              if ($link) :
         ?>
 
         <li class="social__item slider-aside__item">
@@ -78,7 +80,7 @@
           </a>
         </li>
 
-        <?php } ?>
+        <?php endif; endforeach; ?>
       </ul>
     </div>
   </aside>
@@ -108,16 +110,17 @@
         </p>
       </div>
       <div class="main-about__intro">
-        <img class="image main-about__image" src="images/intro/servicii-black.png" alt="" />
+        <img class="image main-about__image"
+          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.png" alt="" />
         <!-- <svg class="main-about__intro" aria-hidden="true">
-          <use xlink:href="images/intro/servicii-black.svg"></use>
+          <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.svg"></use>
         </svg> -->
       </div>
       <div class="main-about__spec">
         <div class="main-about__spec-wrap">
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--chair" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#chair"></use>
+              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#chair"></use>
             </svg>
           </div>
           <div class="main-about__spec-title"><span>I</span> - Interior</div>
@@ -128,7 +131,8 @@
         <div class="main-about__spec-wrap">
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--wardrobe" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#wardrobe"></use>
+              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#wardrobe">
+              </use>
             </svg>
           </div>
           <div class="main-about__spec-title"><span>I</span> - Furniture</div>
@@ -137,7 +141,7 @@
         <div class="main-about__spec-wrap">
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--home" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#home"></use>
+              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#home"></use>
             </svg>
           </div>
           <div class="main-about__spec-title"><span>A</span> - Architecture</div>
@@ -154,28 +158,33 @@
   <div id="interior" class="mini-slider">
     <div class="container mini-slider__container">
       <div class="mini-slider__intro">
-        <img class="image mini-slider__image" src="images/intro/servicii-light.png" alt="" />
+        <img class="image mini-slider__image"
+          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-light.png" alt="" />
       </div>
       <div class="mini-slider__slider">
         <div class="mini-slider__slider-wrapper">
           <div class="swiper-wrapper">
             <div class="swiper-slide mini-slider__slide">
-              <img class="image" src="images/portfolio/slide-3.jpg" alt="" />
+              <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-3.jpg"
+                alt="" />
             </div>
             <!-- slide -->
             <div class="swiper-slide mini-slider__slide">
-              <img class="image" src="images/portfolio/slide-2.jpg" alt="" />
+              <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-2.jpg"
+                alt="" />
             </div>
           </div>
           <!-- slide -->
           <div class="mini-slider__btn mini-slider__btn-prev">
             <svg class="mini-slider__btn-fill" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#arrow-btn"></use>
+              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-btn">
+              </use>
             </svg>
           </div>
           <div class="mini-slider__btn mini-slider__btn-next">
             <svg class="mini-slider__btn-fill" aria-hidden="true">
-              <use xlink:href="images/icons/sprite.svg#arrow-btn"></use>
+              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-btn">
+              </use>
             </svg>
           </div>
         </div>
