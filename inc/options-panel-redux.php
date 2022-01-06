@@ -359,20 +359,22 @@ Redux::set_section(
 				'id'       => 'secondary_phones',
 				'type'     => 'multi_text',
 				'title'    => esc_html__( 'Your secondary phones', 'difa' ),
-				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),				
+				'subtitle' => esc_html__( 'Insert your secondary phone numbers', 'difa' ),	
+				'desc'     => esc_html__( 'Do not leave the field empty', 'difa' ),			
 			),
 			array(
 				'id'       => 'email_difa',
 				'type'     => 'text',
-				'title'    => esc_html__( 'Text Option - Email Validated', 'difa' ),				
+				'title'    => esc_html__( 'Email', 'difa' ),				
 				'validate' => 'email',
-				'msg'      => 'An error message you could customize via your option array!',
+				'msg'      => 'You entered incorrect email adrress!',
 				'default'  => '',
 			),
 			array(
 				'id'       => 'address',
 				'type'     => 'text',
 				'title'    => esc_html__( 'Your address', 'difa' ),
+				'desc'     => esc_html__( 'To break to a new line, use the tag <br />', 'difa' ),			
 			),
 		),
 	)
@@ -403,8 +405,41 @@ Redux::set_section(
 				'type'     => 'text',
 				'title'    => esc_html__( 'Text for Links', 'difa' ),
 				'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
-				// 'desc'     => esc_html__( 'Let the fiels empty if you dont\'t have a link', 'difa' ),
 				'default'  => 'design & archtecture solution',
+			),
+		),
+	)
+);
+
+// end of GLOBAL SETTINGS
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Home Page', 'difa' ),
+		'id'               => 'home_page',
+		'desc'             => esc_html__( 'Option for Home page', 'difa' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-cogs',
+		'fields'           => array(
+			array(
+				'id'       => 'social-profiles-text',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Text for Links', 'difa' ),
+				'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
+				'default'  => 'design & archtecture solution',
+			),
+			array(
+				'id'          => 'main-slides',
+				'type'        => 'slides',
+				'title'       => esc_html__( 'Header Slider', 'difa' ),
+				'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
+				// 'desc'        => esc_html__( 'This field will store all slides values into a multidimensional array to use into a foreach loop.', 'difa' ),
+				'placeholder' => array(
+					'title'       => esc_html__( 'Insert the title', 'difa' ),
+					'description' => esc_html__( 'Leave the field empty', 'difa' ),
+					'url'         => esc_html__( 'Leave the field empty', 'difa' ),
+				),
 			),
 		),
 	)

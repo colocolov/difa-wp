@@ -1,49 +1,21 @@
-<?php get_header( ); 
-
-?>
+<?php get_header( ); ?>
 
 <div class="main-slider">
   <div class="swiper-wrapper">
-    <div class="swiper-slide main-slider__slide"
-      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-1.jpg)">
+    <?php 
+      $slider = $difa_options['main-slides'];
+      foreach ($slider as $slide) :
+    ?>
+    <div class="swiper-slide main-slider__slide" style="background-image: url(<?php echo $slide['image']; ?>">
       <div class="container main-slider__container">
         <h2 class="heading main-slider__head">
-          <span>Design</span> solutions <br />for home
-          <span>&amp;</span> busines<span>.</span>
+          <?php echo $slide['title'];?>
         </h2>
       </div>
     </div>
-    <!-- slide -->
-    <div class="swiper-slide main-slider__slide"
-      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-4.jpg)">
-      <div class="container main-slider__container">
-        <h2 class="heading main-slider__head">
-          <span>Arhitecture</span> solutions<br /> for home
-          <span>&</span> busines.
-        </h2>
-      </div>
-    </div>
-    <!-- slide -->
-    <div class="swiper-slide main-slider__slide"
-      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-5.jpg)">
-      <div class="container main-slider__container">
-        <h2 class="heading main-slider__head">
-          <span>Interior</span> solutions<br /> for home <span>&</span> busines.
-        </h2>
-      </div>
-    </div>
-    <!-- slide -->
-    <div class="swiper-slide main-slider__slide"
-      style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-6.jpg)">
-      <div class="container main-slider__container">
-        <h2 class="heading main-slider__head">
-          <span>Furniture</span> solutions<br /> for home
-          <span>&</span> busines.
-        </h2>
-      </div>
-    </div>
-    <!-- slide -->
+    <?php endforeach; ?>
   </div>
+  <!-- кнопки  -->
   <div class="main-slider__btn main-slider__btn-prev">
     <svg class="main-slider__btn-fill" aria-hidden="true">
       <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
