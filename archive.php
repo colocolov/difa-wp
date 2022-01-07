@@ -1,51 +1,58 @@
 <?php
 /**
  * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Difa
- */
-
+*/
 get_header();
+
+if( is_category() ) :
+	$head_title = get_queried_object()->name;
+	$cat_desc = category_description();
+endif;
 ?>
 
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+<section class="page-hero page-hero--<?php echo $head_title; ?>">
+  <div class="container">
+    <div class="page-hero__wrapper">
+      <h1 class="heading page-hero__head page-hero__head--<?php echo $head_title; ?>"><?php echo $head_title; ?></h1>
+      <div class="page-hero__content">
+        <?php
+					if ($cat_desc) :	echo $cat_desc; endif;
 				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
+        <a class="btn-reset button page-hero__btn" href="<?php echo $mini_slider_spec['mini-slider-btn']; ?>"><?php esc_html_e( 'Află
+        mai multe', 'difa' ); ?></a>
+      </div>
+      <?php get_template_part( 'template-parts/content', 'aside' ); ?>
+    </div>
+  </div>
+</section>
+<main class="main">
+  <section class="page">
+    <div class="container page__container">
+      <?
+  if ( have_posts() ) : 
+		
+		while ( have_posts() ) :
 				the_post();
+				
+				if( is_category() ) : 
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					get_template_part( 'template-parts/content', 'category' );
+    
+				else:
+				
+					get_template_part( 'template-parts/content', get_post_type() );
+				
+				endif;
 
-			endwhile;
+		endwhile;
+	
+	else :
 
-			the_posts_navigation();
+		get_template_part( 'template-parts/content', 'none' );
 
-		else :
+endif; ?>
 
-			get_template_part( 'template-parts/content', 'none' );
+    </div>
+  </section>
 
-		endif;
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+  <? get_footer(); ?>
