@@ -57,7 +57,10 @@
 </div>
 
 <main class="main">
-  <div class="main-about">
+  <?php 
+    $specs = get_field('specs');
+  ?>
+  <div class="main-about" style="background-image: url(<?php echo $specs['spec-bg']; ?>)">
     <div class="container main-about__content">
       <div class="main-about__descr">
         <?php the_content(); ?>
@@ -67,9 +70,9 @@
           src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.png" alt="" />
       </div>
       <div class="main-about__spec">
-        <?php 
-              $home_spec = get_field('home-spec');
-                foreach ($home_spec as $spec) : 
+        <?php
+          $spec_item = $specs['spec-home'];
+          foreach ($spec_item as $spec) : 
         ?>
         <div class="main-about__spec-wrap">
           <div class="main-about__spec-icon">
@@ -85,7 +88,7 @@
         <?php endforeach; ?>
       </div>
       <div class="main-about__wrap-btn">
-        <a class="btn-reset button main-about__btn" href="#"><?php esc_html_e( 'Află
+        <a class="btn-reset button main-about__btn" href="<?php echo $specs['spec-btn']; ?>"><?php esc_html_e( 'Află
         mai multe', 'difa' ); ?></a>
       </div>
     </div>
