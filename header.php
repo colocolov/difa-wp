@@ -33,13 +33,13 @@
         <?php if ( is_front_page() && is_home() ) :
 				?>
         <a class="header__link header__link--logo header__link--logo-index">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-            alt="<?php bloginfo( 'name' ); ?>" class="logo image" />
+          <img class="logo image" src="<?php echo $difa_options['logo_difa']['url']; ?>"
+            alt="<?php bloginfo( 'name' ); ?>" />
         </a>
         <?php	else : ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__link header__link--logo">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg"
-            alt="<?php bloginfo( 'name' ); ?>" class="logo image" />
+        <a class="header__link header__link--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <img class="logo image" src="<?php echo $difa_options['logo_difa']['url']; ?>"
+            alt="<?php bloginfo( 'name' ); ?>" />
         </a>
 
         <?php	endif; ?>

@@ -140,6 +140,18 @@ function difa_widgets_init() {
 }
 add_action( 'widgets_init', 'difa_widgets_init' );
 
+function pre($str) {
+	echo '<pre>';
+	print_r ($str);
+	echo '</pre>';
+}
+
+function webrise_myme_types($mime_types){
+    $mime_types['svg'] = 'image/svg+xml'; // поддержка SVG
+    return $mime_types;
+}
+add_filter( 'upload_mimes', 'webrise_myme_types', 1, 1 );
+
 /**
  * Implement the styles and scripts.
  */

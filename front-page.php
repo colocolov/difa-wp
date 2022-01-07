@@ -3,19 +3,19 @@
 <div class="main-slider">
   <div class="swiper-wrapper">
     <?php 
-      $slider = $difa_options['main-slides'];
+      $slider = get_field('header-slider');
       foreach ($slider as $slide) :
     ?>
-    <div class="swiper-slide main-slider__slide" style="background-image: url(<?php echo $slide['image']; ?>">
+    <div class="swiper-slide main-slider__slide"
+      style="background-image: url(<?php echo $slide['header-slider-img']['url']; ?>)">
       <div class="container main-slider__container">
         <h2 class="heading main-slider__head">
-          <?php echo $slide['title'];?>
+          <?php echo $slide['header-slider-text']; ?>
         </h2>
       </div>
     </div>
     <?php endforeach; ?>
   </div>
-  <!-- кнопки  -->
   <div class="main-slider__btn main-slider__btn-prev">
     <svg class="main-slider__btn-fill" aria-hidden="true">
       <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
@@ -41,7 +41,6 @@
               endif;
               if ($link) :
         ?>
-
         <li class="social__item slider-aside__item">
           <a class="social__link" href="<?php echo $link; ?>" target="_blank">
             <svg class="social__icon" aria-hidden="true">
@@ -51,83 +50,47 @@
             </svg>
           </a>
         </li>
-
         <?php endif; endforeach; ?>
       </ul>
     </div>
   </aside>
-
 </div>
 
 <main class="main">
   <div class="main-about">
     <div class="container main-about__content">
       <div class="main-about__descr">
-        <h2 class="heading main-about__head"><span>cine</span> suntem?</h2>
-        <p class="main-about__text">
-          <span><strong>Salut!</strong></span> Suntem Difa - un birou de design,
-          proiectare și arhitectură! Oferim o gamă largă de servicii creative și
-          strategice pentru mărci, companii, dar și pentru spații și locuințe
-          personale.
-        </p>
-        <p class="main-about__text">
-          DIFA oferă servicii de design interior + reparație la cheie, design
-          mobilier, dar și arhitectură, proiectare și construcție.
-        </p>
-        <p class="main-about__text">
-          <span>
-            Te ghidăm în realizarea celor mai bune soluții și materializăm
-            proiectul tău de vis în realitate!
-          </span>
-        </p>
+        <?php the_content(); ?>
       </div>
       <div class="main-about__intro">
         <img class="image main-about__image"
           src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.png" alt="" />
-        <!-- <svg class="main-about__intro" aria-hidden="true">
-          <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.svg"></use>
-        </svg> -->
       </div>
       <div class="main-about__spec">
+        <?php 
+              $home_spec = get_field('home-spec');
+                foreach ($home_spec as $spec) : 
+        ?>
         <div class="main-about__spec-wrap">
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--chair" aria-hidden="true">
-              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#chair"></use>
+              <use xlink:href="<?php echo $spec['spec-icon']; ?>"></use>
             </svg>
           </div>
-          <div class="main-about__spec-title"><span>I</span> - Interior</div>
+          <div class="main-about__spec-title"><?php echo $spec['spec-title']; ?></div>
           <p class="main-about__spec-text">
-            Proiectare și realizare design interior
+            <?php echo $spec['spec-text']; ?>
           </p>
         </div>
-        <div class="main-about__spec-wrap">
-          <div class="main-about__spec-icon">
-            <svg class="main-about__spec-icon--wardrobe" aria-hidden="true">
-              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#wardrobe">
-              </use>
-            </svg>
-          </div>
-          <div class="main-about__spec-title"><span>I</span> - Furniture</div>
-          <p class="main-about__spec-text">Design și confec- ționare mobilier</p>
-        </div>
-        <div class="main-about__spec-wrap">
-          <div class="main-about__spec-icon">
-            <svg class="main-about__spec-icon--home" aria-hidden="true">
-              <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#home"></use>
-            </svg>
-          </div>
-          <div class="main-about__spec-title"><span>A</span> - Architecture</div>
-          <p class="main-about__spec-text">
-            Arhitectură, proiectare și construcție
-          </p>
-        </div>
+        <?php endforeach; ?>
       </div>
       <div class="main-about__wrap-btn">
-        <button class="btn-reset button main-about__btn">Află mai multe</button>
+        <a class="btn-reset button main-about__btn" href="#"><?php esc_html_e( 'Află
+        mai multe', 'difa' ); ?></a>
       </div>
     </div>
   </div>
-  <div id="interior" class="mini-slider">
+  <div id="interior" class="mini-slider" style="color:white;">
     <div class="container mini-slider__container">
       <div class="mini-slider__intro">
         <img class="image mini-slider__image"
@@ -136,17 +99,17 @@
       <div class="mini-slider__slider">
         <div class="mini-slider__slider-wrapper">
           <div class="swiper-wrapper">
+            <?php 
+              $mini_slider_spec = get_field('mini-slider-section');
+                $mini_slider = $mini_slider_spec['mini-slider'];
+                foreach ($mini_slider as $arrg) : 
+            ?>
             <div class="swiper-slide mini-slider__slide">
-              <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-3.jpg"
-                alt="" />
+              <img class="image" src="<?php echo $arrg['mini-slider-img']['url']; ?>"
+                alt="<?php echo $arrg['mini-slider-img']['alt']; ?>" />
             </div>
-            <!-- slide -->
-            <div class="swiper-slide mini-slider__slide">
-              <img class="image" src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio/slide-2.jpg"
-                alt="" />
-            </div>
+            <?php endforeach; ?>
           </div>
-          <!-- slide -->
           <div class="mini-slider__btn mini-slider__btn-prev">
             <svg class="mini-slider__btn-fill" aria-hidden="true">
               <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-btn">
@@ -161,7 +124,8 @@
           </div>
         </div>
       </div>
-      <button class="btn-reset button mini-slider__button">Află mai multe</button>
+      <a class="btn-reset button mini-slider__button" href="<?php echo $mini_slider_spec['mini-slider-btn']; ?>"><?php esc_html_e( 'Află
+        mai multe', 'difa' ); ?></a>
     </div>
   </div>
 

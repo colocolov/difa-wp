@@ -334,6 +334,15 @@ Redux::set_section(
 		'desc'       => esc_html__( 'Global settings for site', 'difa' ),
 		'fields'     => array(
 			array(
+				'id'           => 'logo_difa',
+				'type'         => 'media',
+				'url'          => true,
+				'title'        => esc_html__( 'Logo', 'difa' ),
+				'compiler'     => 'true',
+				'subtitle'     => esc_html__( 'Upload your logo here', 'difa' ),
+				'preview_size' => 'thumbnail',
+			),
+			array(
 				'id'       => 'copyright',
 				'type'     => 'text',
 				'title'    => esc_html__( 'Entry copyright', 'difa' ),
@@ -422,25 +431,24 @@ Redux::set_section(
 		'customizer_width' => '400px',
 		'icon'             => 'el el-cogs',
 		'fields'           => array(
-			array(
-				'id'       => 'social-profiles-text',
-				'type'     => 'text',
-				'title'    => esc_html__( 'Text for Links', 'difa' ),
-				'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
-				'default'  => 'design & archtecture solution',
-			),
-			array(
-				'id'          => 'main-slides',
-				'type'        => 'slides',
-				'title'       => esc_html__( 'Header Slider', 'difa' ),
-				'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
-				// 'desc'        => esc_html__( 'This field will store all slides values into a multidimensional array to use into a foreach loop.', 'difa' ),
-				'placeholder' => array(
-					'title'       => esc_html__( 'Insert the title', 'difa' ),
-					'description' => esc_html__( 'Leave the field empty', 'difa' ),
-					'url'         => esc_html__( 'Leave the field empty', 'difa' ),
-				),
-			),
+		// 	array(
+		// 		'id'       => 'social-profiles-text',
+		// 		'type'     => 'text',
+		// 		'title'    => esc_html__( 'Text for Links', 'difa' ),
+		// 		'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
+		// 		'default'  => 'design & archtecture solution',
+		// 	),
+		// 	array(
+		// 		'id'          => 'main-slides',
+		// 		'type'        => 'slides',
+		// 		'title'       => esc_html__( 'Header Slider', 'difa' ),
+		// 		'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
+		// 		'placeholder' => array(
+		// 			'title'       => esc_html__( 'Insert the title', 'difa' ),
+		// 			'description' => esc_html__( 'Leave the field empty', 'difa' ),
+		// 			'url'         => esc_html__( 'Leave the field empty', 'difa' ),
+		// 		),
+		// 	),
 		),
 	)
 );
