@@ -38,10 +38,10 @@
                 if ($phone) :
           ?>
           <div class="footer__phone">
-            Telefon:
+            <?php esc_html_e( 'Telefon:', 'difa' ); ?>
             <a href="tel:<?php echo $tel = str_replace(" ","",$phone); 
 							?>" class="footer__link">
-              <?php echo $phone ?>
+              <?php echo $phone; ?>
             </a>
           </div>
           <?php endif; endforeach; endif; 
@@ -62,7 +62,7 @@
           if ($difa_options['copyright']) :
         ?>
         <p class="footer__copyright">
-          DIFA. Toate drepturile sunt rezervate. 2021
+          <?php echo $difa_options['copyright']; ?>
         </p>
         <?php endif; ?>
       </div>

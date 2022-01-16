@@ -86,10 +86,10 @@ $args = array(
 	'allow_sub_menu'            => true,
 
 	// The text to appear in the admin menu.
-	'menu_title'                => esc_html__( 'Sample Options', 'your-textdomain-here' ),
+	'menu_title'                => esc_html__( 'Difa Options', 'difa' ),
 
 	// The text to appear on the page title.
-	'page_title'                => esc_html__( 'Sample Options', 'your-textdomain-here' ),
+	'page_title'                => esc_html__( 'Difa Options', 'difa' ),
 
 	// Disable to create your own Google fonts loader.
 	'disable_google_fonts_link' => false,
@@ -219,6 +219,7 @@ $args = array(
 // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
 // PLEASE CHANGE THEME BEFORE RELEASEING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
+/*
 $args['admin_bar_links'][] = array(
 	'id'    => 'redux-docs',
 	'href'  => '//devs.redux.io/',
@@ -236,10 +237,12 @@ $args['admin_bar_links'][] = array(
 	'href'  => 'redux.io/extensions',
 	'title' => __( 'Extensions', 'your-textdomain-here' ),
 );
+*/
 
 // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
 // PLEASE CHANGE THEME BEFORE RELEASEING YOUR PRODUCT!!
 // If these are left unchanged, they will not display in your panel!
+/*
 $args['share_icons'][] = array(
 	'url'   => '//github.com/ReduxFramework/ReduxFramework',
 	'title' => 'Visit us on GitHub',
@@ -260,6 +263,7 @@ $args['share_icons'][] = array(
 	'title' => 'Find us on LinkedIn',
 	'icon'  => 'el el-linkedin',
 );
+*/
 
 // Panel Intro text -> before the form.
 if ( ! isset( $args['global_variable'] ) || false !== $args['global_variable'] ) {
@@ -270,13 +274,13 @@ if ( ! isset( $args['global_variable'] ) || false !== $args['global_variable'] )
 	}
 
 	// translators:  Panel opt_name.
-	$args['intro_text'] = '<p>' . sprintf( esc_html__( 'Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: $%1$s', 'your-textdomain-here' ), '<strong>' . $v . '</strong>' ) . '<p>';
+	//$args['intro_text'] = '<p>' . sprintf( esc_html__( 'Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: $%1$s', 'your-textdomain-here' ), '<strong>' . $v . '</strong>' ) . '<p>';
 } else {
-	$args['intro_text'] = '<p>' . esc_html__( 'This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.', 'your-textdomain-here' ) . '</p>';
+	//$args['intro_text'] = '<p>' . esc_html__( 'This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.', 'your-textdomain-here' ) . '</p>';
 }
 
 // Add content after the form.
-$args['footer_text'] = '<p>' . esc_html__( 'This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.', 'your-textdomain-here' ) . '</p>';
+//$args['footer_text'] = '<p>' . esc_html__( 'This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.', 'your-textdomain-here' ) . '</p>';
 
 Redux::set_args( $opt_name, $args );
 
@@ -362,13 +366,13 @@ Redux::set_section(
 				'id'       => 'primary_phone',
 				'type'     => 'text',
 				'title'    => esc_html__( 'Your primary phone', 'difa' ),
-				'subtitle' => esc_html__( 'Insert the phone number', 'difa' ),
+				'subtitle' => esc_html__( 'This number is displayed in the header', 'difa' ),
 			),
 			array(
 				'id'       => 'secondary_phones',
 				'type'     => 'multi_text',
 				'title'    => esc_html__( 'Your secondary phones', 'difa' ),
-				'subtitle' => esc_html__( 'Insert your secondary phone numbers', 'difa' ),	
+				'subtitle' => esc_html__( 'This numbers is in the footer', 'difa' ),	
 				'desc'     => esc_html__( 'Do not leave the field empty', 'difa' ),			
 			),
 			array(
@@ -429,7 +433,7 @@ Redux::set_section(
 		'id'               => 'home_page',
 		'desc'             => esc_html__( 'Option for Home page', 'difa' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-cogs',
+		'icon'             => 'el el-home',
 		'fields'           => array(
 		// 	array(
 		// 		'id'       => 'social-profiles-text',
@@ -453,6 +457,37 @@ Redux::set_section(
 	)
 );
 
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Sections site', 'difa' ),
+		'id'               => 'sections_site',
+		'desc'             => esc_html__( 'Option for Sections page', 'difa' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-th',
+		'fields'           => array(
+			array(
+				'id'       => 'link_descr_section',
+				'type'     => 'text',
+				'title'    => esc_html__( 'Input Link', 'difa' ),
+				'subtitle' => esc_html__( 'Insert link to page', 'difa' ),
+				// 'default'  => '',
+			),
+		// 	array(
+		// 		'id'          => 'main-slides',
+		// 		'type'        => 'slides',
+		// 		'title'       => esc_html__( 'Header Slider', 'difa' ),
+		// 		'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
+		// 		'placeholder' => array(
+		// 			'title'       => esc_html__( 'Insert the title', 'difa' ),
+		// 			'description' => esc_html__( 'Leave the field empty', 'difa' ),
+		// 			'url'         => esc_html__( 'Leave the field empty', 'difa' ),
+		// 		),
+		// 	),
+		),
+	)
+);
 
 //-----END MY FIELDS
 
@@ -690,6 +725,7 @@ require_once Redux_Core::$dir . '../sample/metaboxes.php';
 /**
  * Raw README
  */
+/*
 if ( file_exists( $dir . '/../README.md' ) ) {
 	$section = array(
 		'icon'   => 'el el-list-alt',
@@ -706,7 +742,7 @@ if ( file_exists( $dir . '/../README.md' ) ) {
 
 	Redux::set_section( $opt_name, $section );
 }
-
+*/
 Redux::set_section(
 	$opt_name,
 	array(

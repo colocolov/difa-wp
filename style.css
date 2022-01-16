@@ -15,3 +15,16 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 .menu__item.current-menu-item a {
   color: #fbb03b;
 }
+.vp-portfolio__items-arrow {
+  background-color: transparent !important;
+  color: #d3d3d3 !important;
+  box-shadow: none !important;
+}
+.vp-portfolio__items-arrow:hover {
+  color: #fbb03b !important;
+}
+
+.vp-portfolio__items-style-default .vp-portfolio__item:hover .vp-portfolio__item-img img,
+.vp-portfolio__items-style-default .vp-portfolio__item-focus .vp-portfolio__item-img img {
+  transform: none !important;
+}

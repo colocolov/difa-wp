@@ -146,11 +146,25 @@ function pre($str) {
 	echo '</pre>';
 }
 
+
+/**
+ * Add SVG-files in media library
+ */
 function webrise_myme_types($mime_types){
     $mime_types['svg'] = 'image/svg+xml'; // поддержка SVG
     return $mime_types;
 }
 add_filter( 'upload_mimes', 'webrise_myme_types', 1, 1 );
+
+function admin_custom_css() {
+    echo "<style>table.media .column-title .media-icon img[src='.svg']{
+        width: 100%;
+        height: auto;
+    }</style>";
+}
+add_action( 'admin_head', 'admin_custom_css' );
+
+
 
 /**
  * Implement the styles and scripts.

@@ -1,6 +1,7 @@
 <?php
-    
-    
+ $cnt = 0;
+    $cnt++;
+   echo $cnt; 
     
 ?>
 

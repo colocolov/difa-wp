@@ -1,5 +1,6 @@
 <?php if () : else: endif; ?>
 <?php esc_html_e( 'Contacte', 'difa' ); ?>
+pre(get_field('image-map'));
 
 
 <!-- ARCHIVE -->
@@ -14,7 +15,6 @@
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
   </header><!-- .page-header -->
-  ddddddddddddddddddddddddddddddd
   <?php
 			/* Start the Loop */
 			while ( have_posts() ) :

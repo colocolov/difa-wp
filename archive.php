@@ -10,7 +10,7 @@ if( is_category() ) :
 endif;
 ?>
 
-<section class="page-hero page-hero--<?php echo $head_title; ?>">
+<section class="page-hero page-hero--<?php echo strtolower($head_title); ?>">
   <div class="container">
     <div class="page-hero__wrapper">
       <h1 class="heading page-hero__head page-hero__head--<?php echo $head_title; ?>"><?php echo $head_title; ?></h1>
@@ -33,12 +33,6 @@ endif;
 		
 		while ( have_posts() ) :
 				the_post();
-				
-				if( is_category() ) : 
-
-					get_template_part( 'template-parts/content', 'category' );
-    
-				else:
 				
 					get_template_part( 'template-parts/content', get_post_type() );
 				
