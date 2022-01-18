@@ -26,7 +26,7 @@ endif;
   </div>
 </section>
 <main class="main">
-  <section class="page">
+  <section class="page__section">
     <div class="container page__container">
       <?
   if ( have_posts() ) : 

@@ -14,7 +14,12 @@ endif;
 <section class="page-hero page-hero--<?php echo strtolower($head_title); ?>">
   <div class="container">
     <div class="page-hero__wrapper">
-      <h1 class="heading page-hero__head page-hero__head--<?php echo $head_title; ?>"><?php echo $head_title; ?></h1>
+      <div class="page-hero__head page-hero__head--<?php echo strtolower($head_title); ?>">
+        <h1 class="unvisible"><?php echo $head_title; ?></h1>
+        <img class="image"
+          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/<?php echo strtolower($head_title); ?>.svg"
+          alt="<?php echo $head_title; ?>" />
+      </div>
       <div class="page-hero__content">
         <?php
 					if ($cat_desc) :	echo $cat_desc; endif;
@@ -30,44 +35,11 @@ endif;
   </div>
 </section>
 <main class="main">
-  <section class="page">
+  <section class="page__section">
     <div class="container page__container">
       <?
-      $cnt = 1;
-      if ( have_posts() ) : 
-		
-		  while ( have_posts() ) :
+      if ( have_posts() ) : while ( have_posts() ) :
 				the_post();
-
-        $type = '';
-        switch($cnt) : 
-          case "1": $type = 'middle';
-            break;
-          case "2": $type = 'middle';
-            break;
-          case "3": $type = 'small';
-            break;
-          case "4": $type = 'small';
-            break;
-          case "5": $type = 'median';
-            break;
-          case "6": $type = 'big';
-            break;
-          case "7": $type = 'middle';
-            break;
-          case "8": $type = 'middle';
-            break;
-          case "9": $type = 'small';
-            break;
-          case "10": $type = 'small';
-            break;
-          case "11": $type = 'median';
-            break;
-          case "12": $type = 'big';
-            break;
-				
-				
-        endswitch;   
       ?>
 
       <a href="<?php the_permalink(); ?>" class="page__work">
@@ -79,7 +51,6 @@ endif;
         <p class="page__adress"><?php echo get_the_excerpt(); ?></p>
       </a>
       <?php
-      $cnt++;
 		endwhile;
   endif; ?>
 

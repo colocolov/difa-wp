@@ -72,9 +72,12 @@ get_header();
               <?php endif; endforeach; ?>
             </ul>
           </div>
-          <button class="btn-reset button contact__button contact__button--call">
+          <a class="btn-reset button contact__button contact__button--call" href="tel:<?php 
+								$primary = str_replace(" ","",$difa_options['primary_phone']);
+								echo $primary; 
+							?>">
             <?php esc_html_e( 'Call now', 'difa' ); ?>
-          </button>
+          </a>
         </div>
         <div class="contact__form">
           <!-- <form action="#">

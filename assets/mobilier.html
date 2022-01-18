@@ -22,8 +22,8 @@
     <div class="wrapper">
       <header class="header">
   <div class="container header__container">
-    <a href="/" class="header__link header__link--logo">
-      <img src="images/logo.svg" alt="Logo: Difa" class="logo image" />
+    <a class="header__link header__link--logo" href="index.html">
+      <img class="logo image" src="images/logo.svg" alt="Logo: Difa" />
     </a>
     <a
       data-da=".menu__body,768,1"
@@ -44,7 +44,7 @@
             <a href="arhitectura.html" class="menu__link">Arhitectura</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link">Contacte</a>
+            <a href="contact.html" class="menu__link">Contacte</a>
           </li>
           <li class="menu__item">
             <a href="#" class="menu__link">Ro</a>
@@ -75,9 +75,10 @@
  <section class="page-hero page-hero--mobilier">
   <div class="container">
     <div class="page-hero__wrapper">
-      <h1 class="heading page-hero__head page-hero__head--mobilier">
-        mobi lier
-      </h1>
+      <div class="page-hero__head page-hero__head--mobilier">
+        <h1 class="unvisible">mobilier</h1>
+        <img class="image" src="images/intro/mobilier.svg" alt="" />
+      </div>
       <div class="page-hero__content">
         <p>
           Mobila confecționată individual la comandă și ajustată stilistic la
@@ -93,29 +94,29 @@
           <span>soluții inteligente</span> în exploatarea mobilei pe fiecare
           cm2.
         </p>
-        <button class="btn-reset button page-hero__btn">Află mai multe</button>
+        <a class="btn-reset button page-hero__btn" href="#">Află mai multe</a>
       </div>
       <aside class="slider-aside">
   <div class="slider-aside__content">
     <p class="slider-aside__text"><span>design & archtecture solution</span></p>
     <div class="slider-aside__divider"></div>
-    <ul data-da=".menu__body,768,2" class="socail slider-aside__list">
+    <ul data-da=".menu__body,768,2" class="social slider-aside__list">
       <li class="social__item slider-aside__item">
-        <a href="#" class="social__link">
+        <a class="social__link" href="#" target="_blank">
           <svg class="social__icon" aria-hidden="true">
             <use xlink:href="images/icons/sprite.svg#viber"></use>
           </svg>
         </a>
       </li>
       <li class="social__item slider-aside__item">
-        <a href="#" class="social__link">
+        <a class="social__link" href="#" target="_blank">
           <svg class="social__icon" aria-hidden="true">
             <use xlink:href="images/icons/sprite.svg#instagram"></use>
           </svg>
         </a>
       </li>
       <li class="social__item slider-aside__item">
-        <a href="#" class="social__link">
+        <a class="social__link" href="#" target="_blank">
           <svg class="social__icon" aria-hidden="true">
             <use xlink:href="images/icons/sprite.svg#facebook"></use>
           </svg>
@@ -129,49 +130,98 @@
   </div>
 </section>
 
-      <main class="main"><section class="page">
+      <main class="main"><section class="page__section">
   <div class="container page__container">
-    <a href="#" class="page__work page__work--middle">
-      <div class="page__photo page__photo--middle">
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
         <img class="image" src="images/portfolio/interior/01.jpg" alt="" />
       </div>
       <h2 class="page__title">Apartament 63 m2</h2>
       <p class="page__adress">Str. Calea Iesilor 5</p>
     </a>
-    <a href="#" class="page__work page__work--middle">
-      <div class="page__photo page__photo--middle">
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
         <img class="image" src="images/portfolio/interior/02.jpg" alt="" />
       </div>
       <h2 class="page__title">Apartament 64 m2 “Park House”</h2>
       <p class="page__adress">Bd. Moscovei 9/5</p>
     </a>
-    <a href="#" class="page__work page__work--small">
-      <div class="page__photo page__photo--small">
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
         <img class="image" src="images/portfolio/interior/03.jpg" alt="" />
       </div>
       <h2 class="page__title">Apartament 63 m2</h2>
       <p class="page__adress">Str. Calea Iesilor 5</p>
     </a>
-    <a href="#" class="page__work page__work--small">
-      <div class="page__photo page__photo--small">
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
         <img class="image" src="images/portfolio/interior/04.jpg" alt="" />
       </div>
       <h2 class="page__title">Apartament 63 m2</h2>
       <p class="page__adress">Str. Calea Iesilor 5</p>
     </a>
-    <a href="#" class="page__work page__work--median">
-      <div class="page__photo page__photo--median">
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
         <img class="image" src="images/portfolio/interior/05.jpg" alt="" />
       </div>
       <h2 class="page__title">Matei Basarab 2/1</h2>
       <p class="page__adress">Apartament 43.4 m2</p>
     </a>
-    <a href="#" class="page__work page__work--big">
-      <div class="page__photo page__photo--big">
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
         <img class="image" src="images/portfolio/interior/06.jpg" alt="" />
       </div>
       <h2 class="page__title">Apartament 59 m2</h2>
       <p class="page__adress">Bd. Ștefan cel Mare 184</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/01.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 63 m2</h2>
+      <p class="page__adress">Str. Calea Iesilor 5</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/02.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 64 m2 “Park House”</h2>
+      <p class="page__adress">Bd. Moscovei 9/5</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/03.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 63 m2</h2>
+      <p class="page__adress">Str. Calea Iesilor 5</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/02.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 64 m2 “Park House”</h2>
+      <p class="page__adress">Bd. Moscovei 9/5</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/03.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 63 m2</h2>
+      <p class="page__adress">Str. Calea Iesilor 5</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/03.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 63 m2</h2>
+      <p class="page__adress">Str. Calea Iesilor 5</p>
+    </a>
+    <a class="page__work" href="portfolio.html">
+      <div class="page__photo">
+        <img class="image" src="images/portfolio/interior/03.jpg" alt="" />
+      </div>
+      <h2 class="page__title">Apartament 63 m2</h2>
+      <p class="page__adress">Str. Calea Iesilor 5</p>
     </a>
   </div>
 </section>
@@ -180,7 +230,7 @@
   <div class="container">
     <div class="footer__content">
       <h2 class="heading footer__head">Contacte</h2>
-      <ul class="socail footer__list">
+      <ul class="social footer__list">
         <li class="social__item footer__item">
           <a href="#" class="footer__link social__link">
             <svg class="social__icon" aria-hidden="true">

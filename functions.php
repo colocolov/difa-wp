@@ -190,3 +190,8 @@ require get_template_directory() . '/inc/template-functions.php';
  * Include Options Panel by Redux.
  */
 require get_template_directory() . '/inc/options-panel-redux.php';
+
+function remove_styles () {
+	wp_deregister_style( 'contact-form-7' );
+}
+add_action ('wp_print_styles', 'remove_styles', 100);
