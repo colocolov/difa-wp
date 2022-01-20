@@ -28,3 +28,12 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 .vp-portfolio__items-style-default .vp-portfolio__item-focus .vp-portfolio__item-img img {
   transform: none !important;
 }
+
+.wpcf7-not-valid-tip {
+  margin-top: -35px;
+  font-size: 16px;
+}
+.wpcf7-response-output {
+  font-size: 16px;
+  line-height: 120%;
+}
