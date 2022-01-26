@@ -85,6 +85,7 @@ if ( ! function_exists( 'difa_setup' ) ) :
 		register_nav_menus(
 			array(
 				'header' => esc_html__( 'Header Menu', 'difa' ),
+				'langs' => esc_html__( 'Languages Menu', 'difa' ),
 			)
 		);
 
@@ -123,7 +124,6 @@ add_action( 'after_setup_theme', 'difa_content_width', 0 );
 /**
  * Register widget area.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function difa_widgets_init() {
 	register_sidebar(
@@ -146,7 +146,6 @@ function pre($str) {
 	echo '</pre>';
 }
 
-
 /**
  * Add SVG-files in media library
  */
@@ -165,6 +164,15 @@ function admin_custom_css() {
 add_action( 'admin_head', 'admin_custom_css' );
 
 
+add_filter( 'body_class','er404_class' );
+function er404_class( $classes ) {
+
+	// добавим класс 'class-name' в массив классов $classes
+	if( is_404() )
+		$classes[] = 'not-found';
+
+	return $classes;
+}
 
 /**
  * Implement the styles and scripts.
