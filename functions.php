@@ -140,6 +140,9 @@ function difa_widgets_init() {
 }
 add_action( 'widgets_init', 'difa_widgets_init' );
 
+/**
+ * Function display array
+ */
 function pre($str) {
 	echo '<pre>';
 	print_r ($str);
@@ -163,17 +166,22 @@ function admin_custom_css() {
 }
 add_action( 'admin_head', 'admin_custom_css' );
 
-
+/**
+ * Add class for body if page is 4040
+ */
 add_filter( 'body_class','er404_class' );
 function er404_class( $classes ) {
-
-	// добавим класс 'class-name' в массив классов $classes
 	if( is_404() )
 		$classes[] = 'not-found';
-
 	return $classes;
 }
 
+/**
+ * Add SVG-files in media library
+ */
+
+
+ 
 /**
  * Implement the styles and scripts.
  */

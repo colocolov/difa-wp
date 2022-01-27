@@ -67,6 +67,16 @@
 								'depth'           => 0,
 							] ); ?>
 
+            <?php wp_nav_menu( [
+								'theme_location'  => 'langs',
+								'container'       => false,
+								'menu_class'      => '',
+								'menu_id'         => false,
+								'echo'            => true,
+								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								'depth'           => 0,
+							] ); ?>
+
 
             <!--
             <ul class="menu__list">

@@ -37,3 +37,19 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   font-size: 16px;
   line-height: 120%;
 }
+
+#menu-languages {
+  margin-left: 15px;
+}
+#menu-languages li {
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  #menu-languages {
+    margin-left: 0;
+  }
+  .sub-menu {
+    margin-top: 7px;
+    padding: 0;
+  }
+}
