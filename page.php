@@ -10,16 +10,20 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 			
-if ( is_page_template('page-contact.php') ) {
-} else {
-	get_template_part( 'template-parts/content', 'page' );
+			if ( is_page( array('contacte', 'contakty') ) ) :
+				get_template_part( 'template-parts/content', 'contact' );
+			
+			else :
+				get_template_part( 'template-parts/content', 'page' );
 
-}
-
-
+			endif;
 
 		endwhile; // End of the loop.
 		?>
 
 <?php
-get_footer();
+	if ( is_page( array('contacte', 'contakty') ) ) :
+		get_footer('contact');
+	else :
+		get_footer();
+	endif;

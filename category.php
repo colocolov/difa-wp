@@ -6,12 +6,17 @@ get_header();
 
 if( is_category() ) :
 	$head_title = get_queried_object()->name;
-	$cat_desc = category_description();
-  $link = $difa_options['link_descr_section'];
+	// $cat_desc = category_description();
+  // $link = $difa_options['link_descr_section'];
 endif;
+  $term = get_queried_object();
+  $bg_img = get_field('bg-image', $term); 
+  $descr = get_field('description', $term);
+  $url = get_field('url', $term);
 ?>
 
-<section class="page-hero page-hero--<?php echo strtolower($head_title); ?>">
+<section class="page-hero page-hero--<?php echo strtolower($head_title); ?>"
+  style="background-image: url(<?php echo $bg_img; ?>)">
   <div class="container">
     <div class="page-hero__wrapper">
       <div class="page-hero__head page-hero__head--<?php echo strtolower($head_title); ?>">
@@ -22,11 +27,11 @@ endif;
       </div>
       <div class="page-hero__content">
         <?php
-					if ($cat_desc) :	echo $cat_desc; endif;
-          if ($link) : 
+					if ($descr) :	echo $descr; endif;
+          if ($url) : 
 				?>
         <a class="btn-reset button page-hero__btn"
-          href="<?php echo $link; ?>"><?php esc_html_e( 'Află mai multe', 'difa' ); ?>
+          href="<?php echo $url; ?>"><?php esc_html_e( 'Află mai multe', 'difa' ); ?>
         </a>
         <?php endif; ?>
       </div>
