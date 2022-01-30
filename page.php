@@ -10,7 +10,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 			
-			if ( is_page( array('contacte', 'contakty') ) ) :
+			if ( is_page( array('contacte', 'contakty', 'contact') ) ) :
 				get_template_part( 'template-parts/content', 'contact' );
 			
 			else :

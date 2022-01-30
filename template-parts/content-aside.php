@@ -1,7 +1,7 @@
 <?php global $difa_options; ?>
 <aside class="slider-aside">
   <div class="slider-aside__content">
-    <p class="slider-aside__text"><span><?php echo $difa_options['social-profiles-text'];; ?></span></p>
+    <p class="slider-aside__text"><span><?php echo esc_attr($difa_options['social-profiles-text']);; ?></span></p>
     <div class="slider-aside__divider"></div>
     <ul data-da=".menu__body,768,2" class="socail slider-aside__list">
       <?php

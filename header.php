@@ -29,9 +29,7 @@
     <header class="header">
       <div class="container header__container">
 
-        <!--  -->
-        <?php if ( is_front_page() && is_home() ) :
-				?>
+        <?php if ( is_front_page() && is_home() ) :	?>
         <a class="header__link header__link--logo header__link--logo-index">
           <img class="logo image" src="<?php echo $difa_options['logo_difa']['url']; ?>"
             alt="<?php bloginfo( 'name' ); ?>" />
@@ -41,17 +39,14 @@
           <img class="logo image" src="<?php echo $difa_options['logo_difa']['url']; ?>"
             alt="<?php bloginfo( 'name' ); ?>" />
         </a>
-
         <?php	endif; ?>
-
-        <!--  -->
 
         <?php if ($difa_options['primary_phone']) : ?>
         <a data-da=".menu__body,768,1" href="tel:<?php 
 								$primary = str_replace(" ","",$difa_options['primary_phone']);
-								echo $primary; 
+								echo esc_attr($primary); 
 							?>" class="header__link header__link--phone">
-          <?php echo $difa_options['primary_phone']; ?>
+          <?php echo esc_attr($difa_options['primary_phone']); ?>
         </a>
         <?php endif; ?>
         <div class="header__menu menu">
@@ -77,35 +72,6 @@
 								'depth'           => 0,
 							] ); ?>
 
-
-            <!--
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a href="interior.html" class="menu__link">Interior</a>
-              </li>
-              <li class="menu__item">
-                <a href="mobilier.html" class="menu__link">Mobilier</a>
-              </li>
-              <li class="menu__item">
-                <a href="arhitectura.html" class="menu__link">Arhitectura</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Contacte</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Ro</a>
-                <button type="button" class="menu__arrow"></button>
-                <ul class="menu__sub-list">
-                  <li class="menu__sub-item">
-                    <a href="#" class="menu__sub-link">Ro</a>
-                  </li>
-                  <li class="menu__sub-item">
-                    <a href="#" class="menu__sub-link">Ru</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-						-->
           </nav>
           <button type="button" class="menu__icon">
             <span></span>

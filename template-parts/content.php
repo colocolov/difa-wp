@@ -13,13 +13,13 @@
   <header class="entry-header">sdsdsdsd
     <?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">wwwww', '</h1>' );
+			the_title( '<h1 class="entry-title"', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title">ewe<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) :
-			?>bbb
+			?>
     <div class="entry-meta">
       <?php
 				difa_posted_on();

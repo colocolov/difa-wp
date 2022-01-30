@@ -6,8 +6,6 @@ get_header();
 
 if( is_category() ) :
 	$head_title = get_queried_object()->name;
-	// $cat_desc = category_description();
-  // $link = $difa_options['link_descr_section'];
 endif;
   $term = get_queried_object();
   $bg_img = get_field('bg-image', $term); 
@@ -16,14 +14,14 @@ endif;
 ?>
 
 <section class="page-hero page-hero--<?php echo strtolower($head_title); ?>"
-  style="background-image: url(<?php echo $bg_img; ?>)">
+  style="background-image: url(<?php echo esc_attr($bg_img); ?>)">
   <div class="container">
     <div class="page-hero__wrapper">
       <div class="page-hero__head page-hero__head--<?php echo strtolower($head_title); ?>">
-        <h1 class="unvisible"><?php echo $head_title; ?></h1>
+        <h1 class="unvisible"><?php echo esc_attr($head_title); ?></h1>
         <img class="image"
           src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/<?php echo strtolower($head_title); ?>.svg"
-          alt="<?php echo $head_title; ?>" />
+          alt="<?php echo esc_attr($head_title); ?>" />
       </div>
       <div class="page-hero__content">
         <?php
@@ -31,7 +29,7 @@ endif;
           if ($url) : 
 				?>
         <a class="btn-reset button page-hero__btn"
-          href="<?php echo $url; ?>"><?php esc_html_e( 'Află mai multe', 'difa' ); ?>
+          href="<?php echo $url; ?>"><?php esc_html_e( 'Show more', 'difa' ); ?>
         </a>
         <?php endif; ?>
       </div>
@@ -42,23 +40,19 @@ endif;
 <main class="main">
   <section class="page__section">
     <div class="container page__container">
-      <?
-      if ( have_posts() ) : while ( have_posts() ) :
-				the_post();
-      ?>
-
+      <? if ( have_posts() ) : while ( have_posts() ) :	the_post(); ?>
       <a href="<?php the_permalink(); ?>" class="page__work">
         <div class="page__photo">
           <img class="image" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>"
-            alt="<?php the_title(); ?>" />
+            alt="<?php esc_attr(the_title()); ?>" />
         </div>
-        <h2 class="page__title"><?php the_title(); ?></h2>
-        <p class="page__adress"><?php echo get_the_excerpt(); ?></p>
+        <h2 class="page__title"><?php echo esc_attr(get_the_title()); ?></h2>
+        <p class="page__adress"><?php echo esc_attr(get_the_excerpt()); ?></p>
       </a>
       <?php
-		endwhile;
-  endif; ?>
-
+		    endwhile;
+        endif; 
+      ?>
     </div>
   </section>
 

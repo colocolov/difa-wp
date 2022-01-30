@@ -40,7 +40,8 @@
       </div>
       <div class="main-about__intro">
         <img class="image main-about__image"
-          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.png" alt="" />
+          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.png"
+          alt="Difa servicii" />
       </div>
       <div class="main-about__spec">
         <?php
@@ -50,19 +51,19 @@
         <div class="main-about__spec-wrap">
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--chair" aria-hidden="true">
-              <use xlink:href="<?php echo $spec['spec-icon']; ?>"></use>
+              <use xlink:href="<?php echo esc_attr($spec['spec-icon']); ?>"></use>
             </svg>
           </div>
           <div class="main-about__spec-title"><?php echo $spec['spec-title']; ?></div>
           <p class="main-about__spec-text">
-            <?php echo $spec['spec-text']; ?>
+            <?php echo esc_attr($spec['spec-text']); ?>
           </p>
         </div>
         <?php endforeach; ?>
       </div>
       <div class="main-about__wrap-btn">
-        <a class="btn-reset button main-about__btn" href="<?php echo $specs['spec-btn']; ?>"><?php esc_html_e( 'Află
-        mai multe', 'difa' ); ?></a>
+        <a class="btn-reset button main-about__btn"
+          href="<?php echo esc_url($specs['spec-btn']); ?>"><?php esc_html_e( 'Show more', 'difa' ); ?></a>
       </div>
     </div>
   </div>
@@ -70,7 +71,8 @@
     <div class="container mini-slider__container">
       <div class="mini-slider__intro">
         <img class="image mini-slider__image"
-          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-light.png" alt="" />
+          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-light.png"
+          alt="Difa servicii" />
       </div>
       <div class="mini-slider__slider">
         <div class="mini-slider__slider-wrapper">
@@ -100,8 +102,8 @@
           </div>
         </div>
       </div>
-      <a class="btn-reset button mini-slider__button" href="<?php echo $mini_slider_spec['mini-slider-btn']; ?>"><?php esc_html_e( 'Află
-        mai multe', 'difa' ); ?></a>
+      <a class="btn-reset button mini-slider__button"
+        href="<?php echo esc_url($mini_slider_spec['mini-slider-btn']); ?>"><?php esc_html_e( 'Show more', 'difa' ); ?></a>
     </div>
   </div>
 </main>

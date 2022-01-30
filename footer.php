@@ -7,15 +7,20 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__content">
-      <h2 class="heading footer__head"><?php esc_html_e( 'Contacte', 'difa' ); ?></h2>
+      <h2 class="heading footer__head"><?php esc_html_e( 'Contacts', 'difa' ); ?></h2>
       <ul class="socail footer__list">
         <?php
           $social_links = $difa_options['social-profiles-links'];
             foreach($social_links as $social=>$link) : 
               $svg = '';
               if ($social == 'Viber') : $svg = 'viber';
-                elseif ($social == 'Instagram') : $svg = 'instagram';
-                elseif ($social == 'Facebook') : $svg = 'facebook';
+                if(check_mobile_device()) :
+                  $link = 'viber://add?number=' . $link;       
+                else :
+                  $link = 'viber://chat?number=' . $link;
+                endif;
+              elseif ($social == 'Instagram') : $svg = 'instagram';
+              elseif ($social == 'Facebook') : $svg = 'facebook';
               endif;
               if ($link) :
         ?>
@@ -23,7 +28,7 @@
           <a class="footer__link social__link" href="<?php echo $link; ?>">
             <svg class="social__icon" aria-hidden="true">
               <use
-                xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#<?php echo $svg; ?>">
+                xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#<?php echo esc_attr($svg); ?>">
               </use>
             </svg>
           </a>
@@ -38,10 +43,10 @@
                 if ($phone) :
           ?>
           <div class="footer__phone">
-            <?php esc_html_e( 'Telefon:', 'difa' ); ?>
+            <?php esc_html_e( 'Phone:', 'difa' ); ?>
             <a href="tel:<?php echo $tel = str_replace(" ","",$phone); 
 							?>" class="footer__link">
-              <?php echo $phone; ?>
+              <?php echo esc_attr($phone); ?>
             </a>
           </div>
           <?php endif; endforeach; endif; 
@@ -49,7 +54,7 @@
           ?>
           <div class="footer__email">
             <a href="mailto:<?php echo $difa_options['email_difa']; ?>"
-              class="footer__link"><?php echo $difa_options['email_difa']; ?></a>
+              class="footer__link"><?php echo esc_attr($difa_options['email_difa']); ?></a>
           </div>
         </div>
         <?php endif; 
@@ -62,7 +67,7 @@
           if ($difa_options['copyright']) :
         ?>
         <p class="footer__copyright">
-          <?php echo $difa_options['copyright']; ?>
+          <?php echo esc_attr($difa_options['copyright']); ?>
         </p>
         <?php endif; ?>
       </div>
@@ -70,13 +75,7 @@
   </div>
 </footer>
 
-
 </div>
-
-<!-- подключение скриптов -->
-<!-- <script src="js/adv.min.js"></script> -->
-<!-- <script src="js/swiper-bundle.min.js"></script> -->
-<!-- <script src="js/main.js"></script> -->
 <?php wp_footer(); ?>
 </body>
 
