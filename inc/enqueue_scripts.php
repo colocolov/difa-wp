@@ -8,7 +8,7 @@ function difa_scripts() {
 
 	wp_enqueue_style( 'difa-swipper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'difa-main', get_template_directory_uri() . '/assets/css/style.css', array(), time() );
-	wp_enqueue_style( 'difa-style', get_stylesheet_uri(), array('difa-main'), _S_VERSION );
+	wp_enqueue_style( 'difa-style', get_stylesheet_uri(), array('difa-main'), time() );
 
 	 
   wp_enqueue_script( 'js-swipper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), _S_VERSION, true );

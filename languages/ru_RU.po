@@ -1,0 +1,288 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Difa 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"POT-Creation-Date: 2022-02-01 13:30+0200\n"
+"PO-Revision-Date: 2022-02-01 13:31+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: _s\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _:1;esc_html__:1;esc_html_e:1;esc_attr_e:1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:13
+msgid "page not found"
+msgstr ""
+
+#: 404.php:16
+msgid "Back to home"
+msgstr ""
+
+#: archive.php:14 category.php:32 front-page.php:69 front-page.php:107
+#: template-parts/content-post.php:23
+msgid "Show more"
+msgstr "Подробнее"
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:10
+msgid "Contacts"
+msgstr "Контакты"
+
+#: footer.php:46 template-parts/content-contact.php:31
+msgid "Phone:"
+msgstr "Телефон:"
+
+#: functions.php:87
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:88
+msgid "Languages Menu"
+msgstr ""
+
+#: functions.php:131
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:133
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/options-panel-redux.php:89 inc/options-panel-redux.php:92
+msgid "Difa Options"
+msgstr ""
+
+#: inc/options-panel-redux.php:297
+msgid "Theme Information 1"
+msgstr ""
+
+#: inc/options-panel-redux.php:298 inc/options-panel-redux.php:303
+msgid "This is the tab content, HTML is allowed."
+msgstr ""
+
+#: inc/options-panel-redux.php:302
+msgid "Theme Information 2"
+msgstr ""
+
+#: inc/options-panel-redux.php:309
+msgid "This is the sidebar content, HTML is allowed."
+msgstr ""
+
+#: inc/options-panel-redux.php:325
+msgid "Global Settings"
+msgstr ""
+
+#: inc/options-panel-redux.php:327
+msgid "Option for site"
+msgstr ""
+
+#: inc/options-panel-redux.php:335
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/options-panel-redux.php:338
+msgid "Global settings for site"
+msgstr ""
+
+#: inc/options-panel-redux.php:344
+msgid "Logo"
+msgstr ""
+
+#: inc/options-panel-redux.php:346
+msgid "Upload your logo here"
+msgstr ""
+
+#: inc/options-panel-redux.php:352
+msgid "Entry copyright"
+msgstr ""
+
+#: inc/options-panel-redux.php:360
+msgid "Contacts Data"
+msgstr ""
+
+#: inc/options-panel-redux.php:363
+msgid "Add contacts data for yor site"
+msgstr ""
+
+#: inc/options-panel-redux.php:368
+msgid "Your primary phone"
+msgstr ""
+
+#: inc/options-panel-redux.php:369
+msgid "This number is displayed in the header"
+msgstr ""
+
+#: inc/options-panel-redux.php:374
+msgid "Your secondary phones"
+msgstr ""
+
+#: inc/options-panel-redux.php:375
+msgid "This numbers is in the footer"
+msgstr ""
+
+#: inc/options-panel-redux.php:376
+msgid "Do not leave the field empty"
+msgstr ""
+
+#: inc/options-panel-redux.php:381
+msgid "Email"
+msgstr ""
+
+#: inc/options-panel-redux.php:389
+msgid "Your address"
+msgstr ""
+
+#: inc/options-panel-redux.php:390
+msgid "To break to a new line, use the tag <br />"
+msgstr ""
+
+#: inc/options-panel-redux.php:398
+msgid "Social Profiles"
+msgstr ""
+
+#: inc/options-panel-redux.php:401
+msgid "Entry Your Social Profiles"
+msgstr ""
+
+#: inc/options-panel-redux.php:406
+msgid "Social Links"
+msgstr ""
+
+#: inc/options-panel-redux.php:407
+msgid "Insert Links for your Sicial Profiles"
+msgstr ""
+
+#: inc/options-panel-redux.php:408
+msgid "Let the fiels empty if you dont't have a link"
+msgstr ""
+
+#: inc/options-panel-redux.php:419
+msgid "Text for Links"
+msgstr ""
+
+#: inc/options-panel-redux.php:420
+msgid "Insert description near social profiles in header"
+msgstr ""
+
+#: inc/options-panel-redux.php:739
+msgid "Customizer Only"
+msgstr ""
+
+#: inc/options-panel-redux.php:740
+msgid "This Section should be visible only in Customizer"
+msgstr ""
+
+#: inc/options-panel-redux.php:746
+msgid "Customizer Only Option"
+msgstr ""
+
+#: inc/options-panel-redux.php:747
+msgid "The subtitle is NOT visible in customizer"
+msgstr ""
+
+#: inc/options-panel-redux.php:748
+msgid "The field desc is NOT visible in customizer."
+msgstr ""
+
+#: inc/options-panel-redux.php:751
+msgid "Opt 1"
+msgstr ""
+
+#: inc/options-panel-redux.php:752
+msgid "Opt 2"
+msgstr ""
+
+#: inc/options-panel-redux.php:753
+msgid "Opt 3"
+msgstr ""
+
+#: inc/options-panel-redux.php:861
+msgid "Section via hook"
+msgstr ""
+
+#: inc/options-panel-redux.php:862
+msgid ""
+"This is a section created by adding a filter to the sections array. Can be "
+"used by child themes to add/remove sections from the options."
+msgstr ""
+
+#: inc/options-panel-redux.php:898
+msgid "Testing filter hook!"
+msgstr ""
+
+#: inc/template-tags.php:63
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:66
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:73
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: page-contact.php:18 template-parts/content-contact.php:17
+msgid "Difa location"
+msgstr ""
+
+#: page-contact.php:32
+msgid "Telefon:"
+msgstr ""
+
+#: page-contact.php:79 template-parts/content-contact.php:83
+msgid "Call now"
+msgstr "Позвонить"
+
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: temp.php:2
+msgid "Contacte"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:26 template-parts/content.php:53
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-post.php:13
+msgid "Difa portfolio"
+msgstr ""

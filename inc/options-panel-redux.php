@@ -95,7 +95,7 @@ $args = array(
 	'disable_google_fonts_link' => false,
 
 	// Show the panel pages on the admin bar.
-	'admin_bar'                 => true,
+	'admin_bar'                 => false,
 
 	// Icon for the admin bar menu.
 	'admin_bar_icon'            => 'dashicons-portfolio',
@@ -107,7 +107,7 @@ $args = array(
 	'global_variable'           => $opt_name,
 
 	// Show the time the page took to load, etc. (forced on while on localhost or when WP_DEBUG is enabled).
-	'dev_mode'                  => true,
+	'dev_mode'                  => false,
 
 	// Enable basic customizer support.
 	'customizer'                => true,
@@ -426,68 +426,57 @@ Redux::set_section(
 
 // end of GLOBAL SETTINGS
 
-Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Home Page', 'difa' ),
-		'id'               => 'home_page',
-		'desc'             => esc_html__( 'Option for Home page', 'difa' ),
-		'customizer_width' => '400px',
-		'icon'             => 'el el-home',
-		'fields'           => array(
-		// 	array(
-		// 		'id'       => 'social-profiles-text',
-		// 		'type'     => 'text',
-		// 		'title'    => esc_html__( 'Text for Links', 'difa' ),
-		// 		'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
-		// 		'default'  => 'design & archtecture solution',
-		// 	),
-		// 	array(
-		// 		'id'          => 'main-slides',
-		// 		'type'        => 'slides',
-		// 		'title'       => esc_html__( 'Header Slider', 'difa' ),
-		// 		'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
-		// 		'placeholder' => array(
-		// 			'title'       => esc_html__( 'Insert the title', 'difa' ),
-		// 			'description' => esc_html__( 'Leave the field empty', 'difa' ),
-		// 			'url'         => esc_html__( 'Leave the field empty', 'difa' ),
-		// 		),
-		// 	),
-		),
-	)
-);
+// Redux::set_section(
+// 	$opt_name,
+// 	array(
+// 		'title'            => esc_html__( 'Home Page', 'difa' ),
+// 		'id'               => 'home_page',
+// 		'desc'             => esc_html__( 'Option for Home page', 'difa' ),
+// 		'customizer_width' => '400px',
+// 		'icon'             => 'el el-home',
+// 		'fields'           => array(
+// 			array(
+// 				'id'       => 'social-profiles-text',
+// 				'type'     => 'text',
+// 				'title'    => esc_html__( 'Text for Links', 'difa' ),
+// 				'subtitle' => esc_html__( 'Insert description near social profiles in header', 'difa' ),
+// 				'default'  => 'design & archtecture solution',
+// 			),
+// 			array(
+// 				'id'          => 'main-slides',
+// 				'type'        => 'slides',
+// 				'title'       => esc_html__( 'Header Slider', 'difa' ),
+// 				'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
+// 				'placeholder' => array(
+// 					'title'       => esc_html__( 'Insert the title', 'difa' ),
+// 					'description' => esc_html__( 'Leave the field empty', 'difa' ),
+// 					'url'         => esc_html__( 'Leave the field empty', 'difa' ),
+// 				),
+// 			),
+// 		),
+// 	)
+// );
 
 
-Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Sections site', 'difa' ),
-		'id'               => 'sections_site',
-		'desc'             => esc_html__( 'Option for Sections page', 'difa' ),
-		'customizer_width' => '400px',
-		'icon'             => 'el el-th',
-		'fields'           => array(
-			array(
-				'id'       => 'link_descr_section',
-				'type'     => 'text',
-				'title'    => esc_html__( 'Input Link', 'difa' ),
-				'subtitle' => esc_html__( 'Insert link to page', 'difa' ),
-				// 'default'  => '',
-			),
-		// 	array(
-		// 		'id'          => 'main-slides',
-		// 		'type'        => 'slides',
-		// 		'title'       => esc_html__( 'Header Slider', 'difa' ),
-		// 		'subtitle'    => esc_html__( 'Slides with drag and drop sortings.', 'difa' ),
-		// 		'placeholder' => array(
-		// 			'title'       => esc_html__( 'Insert the title', 'difa' ),
-		// 			'description' => esc_html__( 'Leave the field empty', 'difa' ),
-		// 			'url'         => esc_html__( 'Leave the field empty', 'difa' ),
-		// 		),
-		// 	),
-		),
-	)
-);
+// Redux::set_section(
+// 	$opt_name,
+// 	array(
+// 		'title'            => esc_html__( 'Sections site', 'difa' ),
+// 		'id'               => 'sections_site',
+// 		'desc'             => esc_html__( 'Option for Sections page', 'difa' ),
+// 		'customizer_width' => '400px',
+// 		'icon'             => 'el el-th',
+// 		'fields'           => array(
+// 			array(
+// 				'id'       => 'link_descr_section',
+// 				'type'     => 'text',
+// 				'title'    => esc_html__( 'Input Link', 'difa' ),
+// 				'subtitle' => esc_html__( 'Insert link to page', 'difa' ),
+// 				// 'default'  => '',
+// 			),
+// 		),
+// 	)
+// );
 
 //-----END MY FIELDS
 

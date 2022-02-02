@@ -30,7 +30,7 @@
       <div class="container header__container">
 
         <?php if ( is_front_page() && is_home() ) :	?>
-        <a class="header__link header__link--logo header__link--logo-index">
+        <a class="header__link header__link--logo">
           <img class="logo image" src="<?php echo $difa_options['logo_difa']['url']; ?>"
             alt="<?php bloginfo( 'name' ); ?>" />
         </a>
@@ -62,7 +62,8 @@
 								'depth'           => 0,
 							] ); ?>
 
-            <?php wp_nav_menu( [
+            <?php if ( has_nav_menu( 'langs' ) ) :
+              wp_nav_menu( [
 								'theme_location'  => 'langs',
 								'container'       => false,
 								'menu_class'      => '',
@@ -70,7 +71,9 @@
 								'echo'            => true,
 								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 								'depth'           => 0,
-							] ); ?>
+							] ); 
+              endif;  
+            ?>
 
           </nav>
           <button type="button" class="menu__icon">

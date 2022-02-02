@@ -14,11 +14,11 @@
             foreach($social_links as $social=>$link) : 
               $svg = '';
               if ($social == 'Viber') : $svg = 'viber';
-                if(check_mobile_device()) :
-                  $link = 'viber://add?number=' . $link;       
-                else :
+                // if(check_mobile_device()) :
+                //   $link = 'viber://add?number=' . $link;       
+                // else :
                   $link = 'viber://chat?number=' . $link;
-                endif;
+                // endif;
               elseif ($social == 'Instagram') : $svg = 'instagram';
               elseif ($social == 'Facebook') : $svg = 'facebook';
               endif;

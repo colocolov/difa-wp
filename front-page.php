@@ -16,16 +16,20 @@
     </div>
     <?php endforeach; ?>
   </div>
-  <div class="main-slider__btn main-slider__btn-prev">
+  <!-- <div class="main-slider__btn main-slider__btn-prev">
     <svg class="main-slider__btn-fill" aria-hidden="true">
-      <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
+      <use xlink:href="<?php 
+        // echo get_template_directory_uri(); 
+      ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
     </svg>
   </div>
   <div class="main-slider__btn main-slider__btn-next">
     <svg class="main-slider__btn-fill" aria-hidden="true">
-      <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
+      <use xlink:href="<?php 
+        // echo get_template_directory_uri(); 
+      ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
     </svg>
-  </div>
+  </div> -->
   <?php get_template_part( 'template-parts/content', 'aside' ); ?>
 </div>
 
@@ -39,9 +43,8 @@
         <?php the_content(); ?>
       </div>
       <div class="main-about__intro">
-        <img class="image main-about__image"
-          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-black.png"
-          alt="Difa servicii" />
+        <?php $service_img = get_field('service'); ?>
+        <img class="image main-about__image" src="<?php echo $service_img['dark']; ?>" alt="Difa servicii" />
       </div>
       <div class="main-about__spec">
         <?php
@@ -70,9 +73,7 @@
   <div id="interior" class="mini-slider">
     <div class="container mini-slider__container">
       <div class="mini-slider__intro">
-        <img class="image mini-slider__image"
-          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/servicii-light.png"
-          alt="Difa servicii" />
+        <img class="image mini-slider__image" src="<?php echo $service_img['light']; ?>" alt="Difa servicii" />
       </div>
       <div class="mini-slider__slider">
         <div class="mini-slider__slider-wrapper">

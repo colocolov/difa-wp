@@ -10,7 +10,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 			
-			if ( is_page( array('contacte', 'contakty', 'contact') ) ) :
+			if ( is_page( array('contacte', 'kontakty', 'contact') ) ) :
 				get_template_part( 'template-parts/content', 'contact' );
 			
 			else :
@@ -22,7 +22,7 @@ get_header();
 		?>
 
 <?php
-	if ( is_page( array('contacte', 'contakty') ) ) :
+	if ( is_page( array('contacte', 'kontakty') ) ) :
 		get_footer('contact');
 	else :
 		get_footer();
