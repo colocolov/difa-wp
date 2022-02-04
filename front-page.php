@@ -30,7 +30,9 @@
       ?>/assets/images/icons/sprite.svg#arrow-slider"></use>
     </svg>
   </div> -->
-  <?php get_template_part( 'template-parts/content', 'aside' ); ?>
+  <div class="container main-slider__aside">
+    <?php get_template_part( 'template-parts/content', 'aside' ); ?>
+  </div>
 </div>
 
 <main class="main">

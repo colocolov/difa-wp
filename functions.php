@@ -188,6 +188,28 @@ function check_mobile_device() {
     return false; 
 };
 
+/**
+ * Add my class in nav menu langs
+ */
+add_filter( 'wp_nav_menu_objects', 'css_for_nav_parrent' );
+function css_for_nav_parrent( $items ){
+	foreach( $items as $item ){
+		if( __nav_hasSub( $item->ID, $items ) ){
+			// все элементы поля "classes" меню, будут совмещены и выведены в атрибут class HTML тега <li>
+			$item->classes[] = 'menu__arrow';
+		}
+	}
+	return $items;
+}
+
+function __nav_hasSub( $item_id, $items ){
+	foreach( $items as $item ){
+		if( $item->menu_item_parent && $item->menu_item_parent == $item_id )
+			return true;
+	}
+	return false;
+}
+
 
 /**
  * Implement the styles and scripts.

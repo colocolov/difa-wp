@@ -39,7 +39,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 }
 
 #menu-languages {
-  margin-left: 15px;
+  margin-left: 35px;
 }
 #menu-languages li {
   font-weight: 700;
@@ -51,5 +51,6 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   .sub-menu {
     margin-top: 7px;
     padding: 0;
+    margin-left: -3px;
   }
 }

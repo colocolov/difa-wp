@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Difa 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2022-02-01 13:30+0200\n"
-"PO-Revision-Date: 2022-02-01 13:31+0200\n"
+"PO-Revision-Date: 2022-02-03 13:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: page-contact.php:18 template-parts/content-contact.php:17
 msgid "Difa location"
-msgstr ""
+msgstr "Difa расположение"
 
 #: page-contact.php:32
 msgid "Telefon:"

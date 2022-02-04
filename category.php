@@ -9,6 +9,7 @@ if( is_category() ) :
 endif;
   $term = get_queried_object();
   $bg_img = get_field('bg-image', $term); 
+  $category_img = get_field('category-image', $term); 
   $descr = get_field('description', $term);
   $url = get_field('url', $term);
 ?>
@@ -19,9 +20,7 @@ endif;
     <div class="page-hero__wrapper">
       <div class="page-hero__head page-hero__head--<?php echo strtolower($head_title); ?>">
         <h1 class="unvisible"><?php echo esc_attr($head_title); ?></h1>
-        <img class="image"
-          src="<?php echo get_template_directory_uri(); ?>/assets/images/intro/<?php echo strtolower($head_title); ?>.svg"
-          alt="<?php echo esc_attr($head_title); ?>" />
+        <img class="image" src="<?php echo esc_attr($category_img); ?>" alt="<?php echo esc_attr($head_title); ?>" />
       </div>
       <div class="page-hero__content">
         <?php

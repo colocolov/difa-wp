@@ -12,10 +12,6 @@
   <meta name="theme-color" content="#111111" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
-
-  <!-- подключение favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png" />
-
   <?php wp_head(); ?>
 </head>
 
@@ -25,7 +21,6 @@
   ?>
 
   <div class="wrapper">
-
     <header class="header">
       <div class="container header__container">
 
