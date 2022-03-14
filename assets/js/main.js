@@ -49,23 +49,13 @@ DynamicAdapt.prototype.init = function () {
   this.mediaQueries = Array.prototype.map.call(
     this.оbjects,
     function (item) {
-      return (
-        "(" +
-        this.type +
-        "-width: " +
-        item.breakpoint +
-        "px)," +
-        item.breakpoint
-      );
+      return "(" + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
     },
     this
   );
-  this.mediaQueries = Array.prototype.filter.call(
-    this.mediaQueries,
-    function (item, index, self) {
-      return Array.prototype.indexOf.call(self, item) === index;
-    }
-  );
+  this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
+    return Array.prototype.indexOf.call(self, item) === index;
+  });
 
   // навешивание слушателя на медиа-запрос
   // и вызов обработчика при первом запуске
@@ -76,12 +66,9 @@ DynamicAdapt.prototype.init = function () {
     const mediaBreakpoint = mediaSplit[1];
 
     // массив объектов с подходящим брейкпоинтом
-    const оbjectsFilter = Array.prototype.filter.call(
-      this.оbjects,
-      function (item) {
-        return item.breakpoint === mediaBreakpoint;
-      }
-    );
+    const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
+      return item.breakpoint === mediaBreakpoint;
+    });
     matchMedia.addListener(function () {
       _this.mediaHandler(matchMedia, оbjectsFilter);
     });
@@ -244,13 +231,7 @@ const isMobile = {
     return navigator.userAgent.match(/IEMobile/i);
   },
   any: function () {
-    return (
-      isMobile.Android() ||
-      isMobile.BlackBerry() ||
-      isMobile.iOS() ||
-      isMobile.Opera() ||
-      isMobile.Windows()
-    );
+    return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
   },
 };
 
@@ -266,28 +247,20 @@ function documentActions(e) {
   const targetElement = e.target;
   if (window.innerWidth > 768 && isMobile.any()) {
     if (targetElement.classList.contains("menu__link")) {
-      // console.log("ehhh");
       targetElement.closest(".menu__item").classList.toggle("_hover");
     }
-    if (
-      !targetElement.closest(".menu__item") &&
-      document.querySelectorAll(".menu__item._hover").length > 0
-    ) {
+    if (!targetElement.closest(".menu__item") && document.querySelectorAll(".menu__item._hover").length > 0) {
       var element = document.querySelector(".menu__item._hover");
       element.classList.remove("_hover");
     }
   }
 
   if (window.innerWidth > 768 && isMobile.any()) {
-    if (targetElement.classList.contains("wpml-ls-native")) {
+    if (targetElement.closest(".menu__arrow") && !targetElement.closest(".sub-menu")) {
       e.preventDefault();
-      // console.log("----");
       targetElement.closest(".menu__item").classList.toggle("_hover");
     }
-    if (
-      !targetElement.closest(".menu__item") &&
-      document.querySelectorAll(".menu__item._hover").length > 0
-    ) {
+    if (!targetElement.closest(".menu__item") && document.querySelectorAll(".menu__item._hover").length > 0) {
       var element = document.querySelector(".menu__item._hover");
       element.classList.remove("_hover");
     }
