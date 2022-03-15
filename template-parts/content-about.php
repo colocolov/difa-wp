@@ -24,16 +24,10 @@
       <ul class="page-about__list">
         <?php 
           $services = get_field('list_servs');
-
-
-pre($services);
-
-
           foreach ($services as $serv) :
         ?>
         <li class="page-about__item">
           <div class="page-about__item-left">
-
             <div class="page-about__spec-wrap">
               <div class="page-about__spec-icon">
                 <svg class="page-about__spec-icon--chair" aria-hidden="true">
@@ -41,9 +35,8 @@ pre($services);
                 </svg>
               </div>
               <div class="page-about__spec-title"><?php echo $serv['name']; ?></div>
-              <a href="#" class="btn-reset button page-about__btn">Call now</a>
+              <a href="tel:<?php echo get_field('call_now'); ?>" class="btn-reset button page-about__btn"><?php esc_html_e( 'Call now', 'difa' ); ?></a>
             </div>
-
           </div>
           <div class="page-about__item-right">
             <?php echo $serv['description'];?>

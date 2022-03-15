@@ -13,7 +13,7 @@ get_header();
 			if ( is_page( array('contacte', 'kontakty', 'contact') ) ) :
 				get_template_part( 'template-parts/content', 'contact' );
 
-			elseif ( is_page( array('about', 'about') ) ) :
+			elseif ( is_page( array('cine-suntem', 'kto-my', 'about') ) ) :
 				get_template_part( 'template-parts/content', 'about' );
 			
 			else :

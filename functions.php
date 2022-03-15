@@ -210,6 +210,20 @@ function __nav_hasSub( $item_id, $items ){
 	return false;
 }
 
+/*** добавление кнопок в HTML редактор ***/
+add_action('admin_footer', 'eg_quicktags');
+function eg_quicktags() {
+?>
+	<script>
+		jQuery(document).ready(function(){
+			if(typeof(QTags) !== 'undefined') {
+			QTags.addButton( 'span', 'span', '<span>', '</span>' );
+			QTags.addButton( 'br', 'br', '<br />' );
+			}
+		});
+	</script>
+<?php
+}
 
 /**
  * Implement the styles and scripts.
