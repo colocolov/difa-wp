@@ -4,48 +4,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Difa 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2022-01-24 16:14+0200\n"
-"PO-Revision-Date: 2022-01-24 16:14+0200\n"
+"POT-Creation-Date: 2022-03-17 15:05+0200\n"
+"PO-Revision-Date: 2022-03-17 15:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Domain: _s\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _:1;esc_html__:1;esc_html_e:1;esc_attr_e:1\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:17
-msgid "Oops! That page can&rsquo;t be found."
+#: 404.php:13
+msgid "page not found"
 msgstr ""
 
-#: 404.php:21
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+#: 404.php:16
+msgid "Back to home"
 msgstr ""
 
-#: 404.php:30
-msgid "Most Used Categories"
+#: archive.php:14 category.php:68 front-page.php:70 front-page.php:84
+#: template-parts/content-post.php:23
+msgid "Show more"
 msgstr ""
 
-#: 404.php:48
-#, php-format
-msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: archive.php:21 front-page.php:64 front-page.php:103
-msgid ""
-"Află\n"
-"        mai multe"
-msgstr ""
-
-#: category.php:29 template-parts/content-post.php:23
-msgid "Află mai multe"
+#: category.php:64
+msgid "To get a consultation"
 msgstr ""
 
 #: comments.php:35
@@ -57,12 +45,12 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:10 temp.php:2
-msgid "Contacte"
+#: footer.php:10
+msgid "Contacts"
 msgstr ""
 
-#: footer.php:41 page-contact.php:32
-msgid "Telefon:"
+#: footer.php:46 template-parts/content-contact.php:31
+msgid "Phone:"
 msgstr ""
 
 #: functions.php:87
@@ -73,11 +61,11 @@ msgstr ""
 msgid "Languages Menu"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:131
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:133
 msgid "Add widgets here."
 msgstr ""
 
@@ -197,73 +185,49 @@ msgstr ""
 msgid "Insert description near social profiles in header"
 msgstr ""
 
-#: inc/options-panel-redux.php:432
-msgid "Home Page"
-msgstr ""
-
-#: inc/options-panel-redux.php:434
-msgid "Option for Home page"
-msgstr ""
-
-#: inc/options-panel-redux.php:464
-msgid "Sections site"
-msgstr ""
-
-#: inc/options-panel-redux.php:466
-msgid "Option for Sections page"
-msgstr ""
-
-#: inc/options-panel-redux.php:473
-msgid "Input Link"
-msgstr ""
-
-#: inc/options-panel-redux.php:474
-msgid "Insert link to page"
-msgstr ""
-
-#: inc/options-panel-redux.php:750
+#: inc/options-panel-redux.php:739
 msgid "Customizer Only"
 msgstr ""
 
-#: inc/options-panel-redux.php:751
+#: inc/options-panel-redux.php:740
 msgid "This Section should be visible only in Customizer"
 msgstr ""
 
-#: inc/options-panel-redux.php:757
+#: inc/options-panel-redux.php:746
 msgid "Customizer Only Option"
 msgstr ""
 
-#: inc/options-panel-redux.php:758
+#: inc/options-panel-redux.php:747
 msgid "The subtitle is NOT visible in customizer"
 msgstr ""
 
-#: inc/options-panel-redux.php:759
+#: inc/options-panel-redux.php:748
 msgid "The field desc is NOT visible in customizer."
 msgstr ""
 
-#: inc/options-panel-redux.php:762
+#: inc/options-panel-redux.php:751
 msgid "Opt 1"
 msgstr ""
 
-#: inc/options-panel-redux.php:763
+#: inc/options-panel-redux.php:752
 msgid "Opt 2"
 msgstr ""
 
-#: inc/options-panel-redux.php:764
+#: inc/options-panel-redux.php:753
 msgid "Opt 3"
 msgstr ""
 
-#: inc/options-panel-redux.php:872
+#: inc/options-panel-redux.php:861
 msgid "Section via hook"
 msgstr ""
 
-#: inc/options-panel-redux.php:873
+#: inc/options-panel-redux.php:862
 msgid ""
 "This is a section created by adding a filter to the sections array. Can be "
 "used by child themes to add/remove sections from the options."
 msgstr ""
 
-#: inc/options-panel-redux.php:909
+#: inc/options-panel-redux.php:898
 msgid "Testing filter hook!"
 msgstr ""
 
@@ -281,17 +245,26 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: page-contact.php:18
+#: page-contact.php:18 template-parts/content-contact.php:17
 msgid "Difa location"
 msgstr ""
 
-#: page-contact.php:79
+#: page-contact.php:32
+msgid "Telefon:"
+msgstr ""
+
+#: page-contact.php:79 template-parts/content-about.php:38
+#: template-parts/content-contact.php:83
 msgid "Call now"
 msgstr ""
 
 #: search.php:21
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: temp.php:2
+msgid "Contacte"
 msgstr ""
 
 #: template-parts/content-none.php:14

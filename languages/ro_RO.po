@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Difa 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2022-01-31 15:04+0200\n"
-"PO-Revision-Date: 2022-02-03 13:11+0200\n"
+"POT-Creation-Date: 2022-03-17 15:05+0200\n"
+"PO-Revision-Date: 2022-03-17 15:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro_MD\n"
@@ -28,10 +28,14 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: archive.php:14 category.php:32 front-page.php:66 front-page.php:106
+#: archive.php:14 category.php:68 front-page.php:70 front-page.php:84
 #: template-parts/content-post.php:23
 msgid "Show more"
 msgstr "Află mai multe"
+
+#: category.php:64
+msgid "To get a consultation"
+msgstr "Pentru o consultare"
 
 #: comments.php:35
 #, php-format
@@ -182,73 +186,49 @@ msgstr ""
 msgid "Insert description near social profiles in header"
 msgstr ""
 
-#: inc/options-panel-redux.php:432
-msgid "Home Page"
-msgstr ""
-
-#: inc/options-panel-redux.php:434
-msgid "Option for Home page"
-msgstr ""
-
-#: inc/options-panel-redux.php:464
-msgid "Sections site"
-msgstr ""
-
-#: inc/options-panel-redux.php:466
-msgid "Option for Sections page"
-msgstr ""
-
-#: inc/options-panel-redux.php:473
-msgid "Input Link"
-msgstr ""
-
-#: inc/options-panel-redux.php:474
-msgid "Insert link to page"
-msgstr ""
-
-#: inc/options-panel-redux.php:750
+#: inc/options-panel-redux.php:739
 msgid "Customizer Only"
 msgstr ""
 
-#: inc/options-panel-redux.php:751
+#: inc/options-panel-redux.php:740
 msgid "This Section should be visible only in Customizer"
 msgstr ""
 
-#: inc/options-panel-redux.php:757
+#: inc/options-panel-redux.php:746
 msgid "Customizer Only Option"
 msgstr ""
 
-#: inc/options-panel-redux.php:758
+#: inc/options-panel-redux.php:747
 msgid "The subtitle is NOT visible in customizer"
 msgstr ""
 
-#: inc/options-panel-redux.php:759
+#: inc/options-panel-redux.php:748
 msgid "The field desc is NOT visible in customizer."
 msgstr ""
 
-#: inc/options-panel-redux.php:762
+#: inc/options-panel-redux.php:751
 msgid "Opt 1"
 msgstr ""
 
-#: inc/options-panel-redux.php:763
+#: inc/options-panel-redux.php:752
 msgid "Opt 2"
 msgstr ""
 
-#: inc/options-panel-redux.php:764
+#: inc/options-panel-redux.php:753
 msgid "Opt 3"
 msgstr ""
 
-#: inc/options-panel-redux.php:872
+#: inc/options-panel-redux.php:861
 msgid "Section via hook"
 msgstr ""
 
-#: inc/options-panel-redux.php:873
+#: inc/options-panel-redux.php:862
 msgid ""
 "This is a section created by adding a filter to the sections array. Can be "
 "used by child themes to add/remove sections from the options."
 msgstr ""
 
-#: inc/options-panel-redux.php:909
+#: inc/options-panel-redux.php:898
 msgid "Testing filter hook!"
 msgstr ""
 
@@ -274,7 +254,8 @@ msgstr "Difa locație"
 msgid "Telefon:"
 msgstr ""
 
-#: page-contact.php:79 template-parts/content-contact.php:83
+#: page-contact.php:79 template-parts/content-about.php:38
+#: template-parts/content-contact.php:83
 msgid "Call now"
 msgstr "Sună acum"
 

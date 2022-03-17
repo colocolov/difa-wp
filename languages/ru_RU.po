@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Difa 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2022-02-01 13:30+0200\n"
-"PO-Revision-Date: 2022-02-03 13:17+0200\n"
+"POT-Creation-Date: 2022-03-17 15:06+0200\n"
+"PO-Revision-Date: 2022-03-17 15:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -28,10 +28,14 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: archive.php:14 category.php:32 front-page.php:69 front-page.php:107
+#: archive.php:14 category.php:68 front-page.php:70 front-page.php:84
 #: template-parts/content-post.php:23
 msgid "Show more"
 msgstr "Подробнее"
+
+#: category.php:64
+msgid "To get a consultation"
+msgstr "Получить консультацию"
 
 #: comments.php:35
 #, php-format
@@ -250,7 +254,8 @@ msgstr "Difa расположение"
 msgid "Telefon:"
 msgstr ""
 
-#: page-contact.php:79 template-parts/content-contact.php:83
+#: page-contact.php:79 template-parts/content-about.php:38
+#: template-parts/content-contact.php:83
 msgid "Call now"
 msgstr "Позвонить"
 

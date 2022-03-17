@@ -40,26 +40,29 @@
           'orderby' => 'term_id',
           'order' => 'ASC',
         ));
-        foreach( $categories as $category ) :
+        $spec_catt = get_field('specs')['spec-home'];
+        foreach( $spec_catt as $catry ) :
           $term = $category;
           // pre($category);
           // $title = $category->name;
           $spec_cat = get_field('cat_on_home', $term);
         ?>
-        <a class="main-about__spec-wrap" href="<?php echo get_category_link( $category->term_id ); ?>">
+        <a class="main-about__spec-wrap" href="<?php echo get_category_link( $catry['spec-link'] ); ?>">
           <?php 
+            
+            // pre($spec_catt);
           // echo $category->cat_ID; 
-          ?>
+          ?>---
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--chair" aria-hidden="true">
-              <use xlink:href="<?php echo esc_attr($spec_cat['icon']); ?>"></use>
+              <use xlink:href="<?php echo esc_attr($catry['spec-icon']); ?>"></use>
             </svg>
           </div>
           <div class="main-about__spec-title">
-            <?php echo $spec_cat['litera']; ?>
+            <?php echo $catry['spec-title']; ?>
           </div>
           <p class="main-about__spec-text">
-            <?php echo esc_attr($spec_cat['spec-text']); ?>
+            <?php echo esc_attr($catry['spec-text']); ?>
           </p>
         </a>
         <?php endforeach; ?>
