@@ -12,6 +12,10 @@
         <h2 class="heading main-slider__head">
           <?php echo $slide['header-slider-text']; ?>
         </h2>
+        <?php if ($slide['header-slider-btn']) : ?>
+        <a class="btn-reset button main-slider__button"
+          href="<?php echo $slide['header-slider-btn']; ?>"><?php esc_html_e( 'To get a consultation', 'difa' ); ?></a>
+        <?php endif; ?>
       </div>
     </div>
     <?php endforeach; ?>
@@ -35,24 +39,23 @@
 
       <div class="main-about__spec">
         <?php
-        $categories = get_categories(array(
-          'taxonomy'     => 'category',
-          'orderby' => 'term_id',
-          'order' => 'ASC',
-        ));
+        // $categories = get_categories(array(
+        //   'taxonomy'     => 'category',
+        //   'orderby' => 'term_id',
+        //   'order' => 'ASC',
+        // ));
         $spec_catt = get_field('specs')['spec-home'];
         foreach( $spec_catt as $catry ) :
-          $term = $category;
+          // $term = $category;
           // pre($category);
           // $title = $category->name;
-          $spec_cat = get_field('cat_on_home', $term);
+          // $spec_cat = get_field('cat_on_home', $term);
         ?>
-        <a class="main-about__spec-wrap" href="<?php echo get_category_link( $catry['spec-link'] ); ?>">
-          <?php 
-            
+        <a class="main-about__spec-wrap" href="<?php echo $catry['spec-link']; ?>">
+          <?php    
             // pre($spec_catt);
           // echo $category->cat_ID; 
-          ?>---
+          ?>
           <div class="main-about__spec-icon">
             <svg class="main-about__spec-icon--chair" aria-hidden="true">
               <use xlink:href="<?php echo esc_attr($catry['spec-icon']); ?>"></use>
