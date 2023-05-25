@@ -10,10 +10,10 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 			
-			if ( is_page( array('contacte', 'kontakty', 'contact') ) ) :
+			if ( is_page( array('contacte', 'kontakty', 'contacts') ) ) :
 				get_template_part( 'template-parts/content', 'contact' );
 
-			elseif ( is_page( array('cine-suntem', 'kto-my', 'about') ) ) :
+			elseif ( is_page( array('cine-suntem', 'kto-my', 'who-are-we') ) ) :
 				get_template_part( 'template-parts/content', 'about' );
 			
 			else :
@@ -25,7 +25,7 @@ get_header();
 		?>
 
 <?php
-	if ( is_page( array('contacte', 'kontakty') ) ) :
+	if ( is_page( array('contacte', 'kontakty', 'contacts') ) ) :
 		get_footer('contact');
 	else :
 		get_footer();

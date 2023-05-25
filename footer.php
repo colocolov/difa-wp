@@ -67,7 +67,10 @@
           if ($difa_options['copyright']) :
         ?>
         <p class="footer__copyright">
-          <?php echo esc_attr($difa_options['copyright']); ?>
+          <?php 
+            echo esc_attr($difa_options['copyright']);
+            echo ' ' . date('Y');
+          ?>
         </p>
         <?php endif; ?>
       </div>

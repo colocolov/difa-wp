@@ -7,7 +7,7 @@ function difa_scripts() {
 	wp_deregister_style( 'contact-form-7-css' );
 
 	wp_enqueue_style( 'difa-swipper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), _S_VERSION );
-	wp_enqueue_style( 'difa-main', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1' );
+	wp_enqueue_style( 'difa-main', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.1.9' );
 	wp_enqueue_style( 'difa-style', get_stylesheet_uri(), array('difa-main'), '1.1.41' );
 
 	 

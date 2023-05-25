@@ -95,7 +95,7 @@ $args = array(
 	'disable_google_fonts_link' => false,
 
 	// Show the panel pages on the admin bar.
-	'admin_bar'                 => false,
+	'admin_bar'                 => true,
 
 	// Icon for the admin bar menu.
 	'admin_bar_icon'            => 'dashicons-portfolio',
@@ -107,7 +107,7 @@ $args = array(
 	'global_variable'           => $opt_name,
 
 	// Show the time the page took to load, etc. (forced on while on localhost or when WP_DEBUG is enabled).
-	'dev_mode'                  => false,
+	'dev_mode'                  => true,
 
 	// Enable basic customizer support.
 	'customizer'                => true,

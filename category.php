@@ -21,11 +21,17 @@ endif;
     case 6:
       $cat_name = 'interior';
       break;
+    case 5:
+      $cat_name = 'interior';
+      break;
     
     case 8:
       $cat_name = 'arhitectura';
       break;
     case 9:
+      $cat_name = 'arhitectura';
+      break;
+    case 29:
       $cat_name = 'arhitectura';
       break;
 
@@ -44,7 +50,13 @@ endif;
       $cat_name = 'reparatie';
       $cat_numb = $category_id;
       break;
-  }  
+    case 28:
+      $cat_name = 'reparatie';
+      $cat_numb = $category_id;
+      break;
+}  
+
+
 ?>
 
 <section class="page-hero page-hero--<?php echo $cat_name; ?>"
@@ -60,14 +72,14 @@ endif;
 					if ($descr) :	echo $descr; endif;
           if ($url) : 
             if ( $category_id == $cat_numb) : ?>
-              <a class="btn-reset button page-hero__btn page-hero__btn--<?php echo $cat_name; ?>"
-                href="<?php echo $url; ?>"><?php esc_html_e( 'To get a consultation', 'difa' ); ?>
-              </a>
-            <? else : ?>
-              <a class="btn-reset button page-hero__btn"
-                href="<?php echo $url; ?>"><?php esc_html_e( 'Show more', 'difa' ); ?>
-              </a> 
-            <? endif;
+        <a class="btn-reset button page-hero__btn page-hero__btn--<?php echo $cat_name; ?>"
+          href="<?php echo $url; ?>"><?php esc_html_e( 'To get a consultation', 'difa' ); ?>
+        </a>
+        <? else : ?>
+        <a class="btn-reset button page-hero__btn"
+          href="<?php echo $url; ?>"><?php esc_html_e( 'Show more', 'difa' ); ?>
+        </a>
+        <? endif;
           endif; ?>
       </div>
       <?php get_template_part( 'template-parts/content', 'aside' ); ?>
